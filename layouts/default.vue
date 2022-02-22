@@ -17,7 +17,7 @@ export default {
   components: {
     Navbar,
     Footer,
-  }
+  },
 };
 </script>
 
@@ -53,5 +53,4 @@ export default {
 .background {
   background-color: #dbc9cc !important;
 }
-
 </style>

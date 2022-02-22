@@ -1,7 +1,7 @@
 <template>
   <div id="navbar">
     <NavDesktop v-show="width > 950" :menu="menu" @scroll="scroll" />
-    <NavMobile />
+    <NavMobile v-show="width <= 950" :menu="menu" @scroll="scroll" />
   </div>
 </template>
 

@@ -41,12 +41,11 @@ export default {
     scroll(to) {
       this.$emit("scroll", to);
     },
-  }
+  },
 };
 </script>
 
 <style scoped>
-
 .nav-desktop {
   padding: 0 2% !important;
 }
@@ -85,5 +84,4 @@ export default {
   font-size: 1.4rem;
   text-transform: lowercase;
 }
-
 </style>

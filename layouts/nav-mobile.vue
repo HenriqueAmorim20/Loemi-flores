@@ -1,11 +1,122 @@
 <template>
   <div id="nav-mobile">
-    nav-mobile
+    <v-app-bar
+      class="nav-mobile"
+      height="55px"
+      color="#dbc9cc"
+      flat
+      fixed
+      elevate-on-scroll
+    >
+      <div class="nav-mobile-logo" @click="scroll('home')">
+        <span>LOEMI</span>
+      </div>
+      <v-spacer />
+      <div @click.stop="drawer = !drawer">
+        <Icon icon="clarity:menu-line" class="nav-mobile-menu" />
+      </div>
+    </v-app-bar>
+    <v-navigation-drawer
+      color="#dbc9cc"
+      width="425"
+      v-model="drawer"
+      right
+      fixed
+      class="nav-drawer"
+    >
+      <div class="nav-drawer-close">
+        <div @click.stop="drawer = !drawer">
+          <Icon icon="ei:close" class="nav-drawer-close-icon" />
+        </div>
+      </div>
+      <div
+        v-for="item in menu"
+        :key="item"
+        @click="scroll(item)"
+        class="nav-drawer-item"
+      >
+        <span>{{ item }}</span>
+      </div>
+      <v-img
+        class="nav-drawer-bottom"
+        contain
+        width="50"
+        height="60"
+        :src="require('~/static/logo-icon.png')"
+      />
+    </v-navigation-drawer>
   </div>
 </template>
 
 <script>
+import { Icon } from "@iconify/vue2";
+
 export default {
-  name: 'NavMobileLayout',
-}
+  name: "NavMobileLayout",
+  components: {
+    Icon,
+  },
+  props: {
+    menu: {
+      type: Array,
+      default: null,
+    },
+  },
+  data() {
+    return {
+      drawer: false,
+    };
+  },
+  methods: {
+    // call parent(navbar) function scroll
+    scroll(to) {
+      this.$emit("scroll", to);
+    },
+  },
+};
 </script>
+
+<style scoped>
+.nav-mobile {
+  padding: 0 5% !important;
+}
+
+.nav-mobile-logo span {
+  cursor: pointer;
+  font-size: 2.8rem;
+}
+
+.nav-mobile-menu {
+  font-size: 2.2rem;
+}
+
+.nav-drawer {
+  z-index: 10;
+  padding: 10px 10px 10px 15px !important;
+}
+
+.nav-drawer-close {
+  display: flex;
+  justify-content: flex-end;
+  margin: 0 0 20% !important;
+}
+
+.nav-drawer-close-icon {
+  cursor: pointer;
+  font-size: 3rem;
+}
+
+.nav-drawer-item {
+  font-size: 2rem;
+  text-transform: lowercase;
+  margin: 3px 0 0 !important;
+}
+
+.nav-drawer-bottom {
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  display: flex;
+  align-items: center;
+}
+</style>
