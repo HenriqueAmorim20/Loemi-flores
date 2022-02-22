@@ -44,6 +44,25 @@
         d="m12.696 11.282l26.022 26.02l-1.414 1.415l-26.022-26.02z"
       />
     </svg>
+    <svg
+      v-if="'arrow-down'"
+      xmlns="http://www.w3.org/2000/svg"
+      aria-hidden="true"
+      role="img"
+      :width="width"
+      preserveAspectRatio="xMidYMid meet"
+      viewBox="0 0 24 24"
+    >
+      <g fill="none">
+        <path
+          d="M4 9l8 8l8-8"
+          :stroke="color"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+      </g>
+    </svg>
   </div>
 </template>
 
