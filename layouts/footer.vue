@@ -118,7 +118,7 @@ a:hover {
   align-items: center;
   flex-wrap: wrap;
   justify-content: center;
-  min-width: 210px !important;
+  min-width: 220px !important;
   margin: 10px 0 !important;
 }
 
@@ -130,7 +130,7 @@ a:hover {
   display: flex;
   align-items: center;
   flex-wrap: wrap;
-  min-width: 280px;
+  min-width: 290px;
   margin: 10px 0 !important;
 }
 
