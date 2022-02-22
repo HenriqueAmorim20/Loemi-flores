@@ -92,10 +92,10 @@ export default {
         nextEl: ".swiper-button-next",
         prevEl: ".swiper-button-prev",
       },
+      effect: "fade",
     });
   },
   methods: {
-
     // Returns message to send to whatsapp chat
     getMessage() {
       return (
