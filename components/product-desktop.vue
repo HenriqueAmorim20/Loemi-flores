@@ -46,9 +46,15 @@
           <span class="product-info-verbete-price"
             >R$ {{ product.price }},00</span
           >
-          <v-btn light class="product-info-verbete-btn">
-            <span>Comprar</span>
-          </v-btn>
+          <a
+            :href="'https://wa.me/5561981771264?text=' + getMessage()"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <v-btn class="product-info-verbete-btn">
+              <span>Comprar</span>
+            </v-btn>
+          </a>
         </div>
       </v-col>
     </v-row>
@@ -87,6 +93,17 @@ export default {
         prevEl: ".swiper-button-prev",
       },
     });
+  },
+  methods: {
+
+    // Returns message to send to whatsapp chat
+    getMessage() {
+      return (
+        "Olá, tudo bem? Tenho interesse no produto " +
+        this.product.to +
+        ". Gostaria de mais informações :)"
+      );
+    },
   },
 };
 </script>
@@ -167,6 +184,10 @@ export default {
   border-radius: 0 !important;
   box-shadow: none !important;
   width: 150px;
+}
+
+a {
+  text-decoration: none !important;
 }
 
 .product-info-verbete-btn span {

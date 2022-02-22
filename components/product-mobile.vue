@@ -38,9 +38,13 @@
         </span>
       </div>
       <span class="product-verbete-price">R$ {{ product.price }},00</span>
-      <v-btn light class="product-verbete-btn">
-        <span>Comprar</span>
-      </v-btn>
+      <a
+        :href="'https://wa.me/5561981771264?text=' + getMessage()"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <v-btn class="product-verbete-btn"> <span>Comprar</span> </v-btn>
+      </a>
     </div>
   </div>
 </template>
@@ -72,6 +76,17 @@ export default {
         prevEl: ".swiper-button-prev",
       },
     });
+  },
+  methods: {
+
+    // Returns message to send to whatsapp chat
+    getMessage() {
+      return (
+        "Olá, tudo bem? Tenho interesse no produto " +
+        this.product.to +
+        ". Gostaria de mais informações :)"
+      );
+    },
   },
 };
 </script>
@@ -160,6 +175,10 @@ export default {
   margin-right: 15px !important;
 }
 
+a {
+  text-decoration: none !important;
+}
+
 .product-verbete-btn {
   background: transparent !important;
   border: 1px solid #fff;
@@ -174,5 +193,4 @@ export default {
   color: #fff !important;
   font-size: 1.2rem;
 }
-
 </style>

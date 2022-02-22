@@ -4,7 +4,7 @@
       <v-col class="footer-logo" cols="5">
         <span @click="scroll()">LOEMI</span>
         <div class="footer-logo-icons">
-          <a href="" target="_blank" rel="noopener noreferrer">
+          <a :href="'https://wa.me/5561981771264?text=' + getMessage()" target="_blank" rel="noopener noreferrer">
             <Icon :icon="'wpp'" :width="25" :color="'#fff'" />
             <p>(61) 98177-1264</p>
           </a>
@@ -50,9 +50,16 @@ export default {
     Icon,
   },
   methods: {
+
+    //Scrolls to the top of the page
     scroll() {
       window.scrollTo({ top: 0, behavior: "smooth" });
     },
+
+    // Returns the message to sent in whatsapp chat
+    getMessage() {
+      return "Olá, tudo bem? Gostaria de tirar umas dúvidas com você :)"
+    }
   },
 };
 </script>
