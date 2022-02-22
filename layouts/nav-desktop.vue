@@ -1,7 +1,6 @@
 <template>
   <div id="nav-desktop">
-    <v-app-bar class="nav-desktop" height="70px" color="#dbc9cc" flat fixed elevate-on-scroll
-      elevation="5">
+    <v-app-bar class="nav-desktop" height="70px" :color="changeBg ? '#dbc9cc' : 'transparent' " flat fixed>
       <div class="nav-desktop-logo" @click="scroll('home')">
         <span>LOEMI</span>
       </div>
@@ -19,8 +18,8 @@
       <div class="nav-desktop-icon">
         <v-img
           contain
-          width="40"
-          height="60"
+          width="30"
+          height="40"
           :src="require('~/static/logo-icon.png')"
         ></v-img>
       </div>
@@ -36,6 +35,10 @@ export default {
       type: Array,
       default: null,
     },
+    changeBg: {
+      type: Boolean,
+      default: false,
+    },
   },
   methods: {
     // call parent(navbar) function scroll
@@ -49,6 +52,7 @@ export default {
 <style scoped>
 .nav-desktop {
   padding: 0 2% !important;
+  transition: 1s all ease;
 }
 
 .nav-desktop-logo span {

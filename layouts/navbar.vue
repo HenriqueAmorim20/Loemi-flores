@@ -1,7 +1,7 @@
 <template>
   <div id="navbar">
-    <NavDesktop v-show="width > 950" :menu="menu" @scroll="scroll" />
-    <NavMobile v-show="width <= 950" :menu="menu" @scroll="scroll" />
+    <NavDesktop v-show="width > 950" :menu="menu" :change-bg="changeBg" @scroll="scroll" />
+    <NavMobile v-show="width <= 950" :menu="menu" :change-bg="changeBg" @scroll="scroll" />
   </div>
 </template>
 
@@ -18,6 +18,7 @@ export default {
   data() {
     return {
       width: null,
+      changeBg: false,
       menu: ["sobre", "monocroma", "caline", "surpris", "elegance", "bouquet"],
     };
   },
@@ -26,17 +27,26 @@ export default {
     this.width = window.innerWidth;
     this.$nextTick(() => {
       window.addEventListener("resize", this.onResize);
+      window.addEventListener("scroll", this.onScroll);
     });
   },
 
   //Remove listener before the component is destroyed
   beforeDestroy() {
     window.removeEventListener("resize", this.onResize);
+    window.removeEventListener("scroll", this.onScroll);
   },
   methods: {
     // Method called everytime window is resized
     onResize() {
       this.width = window.innerWidth;
+    },
+
+    onScroll() {
+      const element = document.getElementById("sobre");
+      const y =
+        element?.getBoundingClientRect().top - (this.width <= 950 ? 55 : 70);
+      this.changeBg = y <= 0
     },
 
     // Scroll to element on page
