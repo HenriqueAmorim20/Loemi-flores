@@ -70,16 +70,7 @@ export default {
       required: true,
     },
   },
-  data() {
-    return {
-      index: 0,
-      img: null,
-    };
-  },
   mounted() {
-    // Set current img to first image of product
-    this.img = this.product.imgs[0];
-
     // Swipper init and options
     new Swiper(".swiper", {
       autoplay: {
@@ -90,20 +81,12 @@ export default {
       pagination: {
         el: ".swiper-pagination",
         dynamicBullets: true,
-        color: '#706063',
       },
       navigation: {
         nextEl: ".swiper-button-next",
         prevEl: ".swiper-button-prev",
       },
     });
-  },
-  methods: {
-    // Change index of the current img
-    changeImg(n) {
-      this.index = this.index + n;
-      this.img = this.product.imgs[this.index];
-    },
   },
 };
 </script>
