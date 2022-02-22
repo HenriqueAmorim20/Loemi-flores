@@ -118,42 +118,42 @@ export default {
         duration: 2500,
         distance: "100px",
         origin: "bottom",
-        reset: true,
+
       });
       ScrollReveal().reveal(".product-info-verbete-about", {
         delay: 150,
         duration: 2500,
         distance: "100px",
         origin: "bottom",
-        reset: true
+
       });
       ScrollReveal().reveal(".product-info-verbete-desc", {
         delay: 300,
         duration: 2500,
         distance: "100px",
         origin: "bottom",
-        reset: true
+
       });
       ScrollReveal().reveal(".product-info-verbete-dimension", {
         delay: 450,
         duration: 2500,
         distance: "100px",
         origin: "bottom",
-        reset: true
+
       });
       ScrollReveal().reveal(".product-info-verbete-price", {
         delay: 600,
         duration: 2500,
         distance: "100px",
         origin: "bottom",
-        reset: true
+
       });
       ScrollReveal().reveal(".product-info-verbete-btn", {
         delay: 600,
         duration: 2500,
         distance: "100px",
         origin: "bottom",
-        reset: true
+
       });
     },
   },
