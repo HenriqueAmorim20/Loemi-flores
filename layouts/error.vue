@@ -1,15 +1,12 @@
 <template>
-  <v-app dark>
-    <h1 v-if="error.statusCode === 404">
-      {{ pageNotFound }}
-    </h1>
-    <h1 v-else>
-      {{ otherError }}
-    </h1>
+  <div class="main">
+    <span>
+      Oops... Algo deu errado!
+    </span>
     <NuxtLink to="/">
-      Home page
+     <p>Voltar para a tela Inicial</p>
     </NuxtLink>
-  </v-app>
+  </div>
 </template>
 
 <script>
@@ -39,7 +36,22 @@ export default {
 </script>
 
 <style scoped>
-h1 {
-  font-size: 20px;
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 70vh;
+}
+span {
+  font-size: 3rem;
+  color: #706063 !important;
+  text-align: center;
+}
+
+a {
+  font-size: 1.5rem;
+  color: #706063 !important;
+  text-decoration-color: #706063 !important;
 }
 </style>
