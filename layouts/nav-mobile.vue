@@ -85,6 +85,7 @@ export default {
 <style scoped>
 .nav-mobile {
   padding: 0 5% !important;
+  transition: 1s all ease;
 }
 
 .nav-mobile-logo span {

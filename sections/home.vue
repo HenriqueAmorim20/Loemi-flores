@@ -88,7 +88,7 @@ export default {
 
 .home-icon {
   position: absolute;
-  bottom: 20px;
+  bottom: 60px;
   left: calc(50% - 20px);
   font-size: 3rem;
   cursor: pointer;
