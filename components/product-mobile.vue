@@ -60,6 +60,8 @@ export default {
     },
   },
   mounted() {
+    this.revealScroll()
+
     // Swipper init and options
     new Swiper(".swiper", {
       // autoplay: {
@@ -86,6 +88,52 @@ export default {
         this.product.name +
         ". Gostaria de mais informações :)"
       );
+    },
+
+    revealScroll() {
+      // Products
+      ScrollReveal().reveal(".product-verbete-title", {
+        delay: 0,
+        duration: 2500,
+        distance: "100px",
+        origin: "bottom",
+        reset: true,
+      });
+      ScrollReveal().reveal(".product-verbete-about", {
+        delay: 150,
+        duration: 2500,
+        distance: "100px",
+        origin: "bottom",
+        reset: true
+      });
+      ScrollReveal().reveal(".product-verbete-desc", {
+        delay: 300,
+        duration: 2500,
+        distance: "100px",
+        origin: "bottom",
+        reset: true
+      });
+      ScrollReveal().reveal(".product-verbete-dimension", {
+        delay: 450,
+        duration: 2500,
+        distance: "100px",
+        origin: "bottom",
+        reset: true
+      });
+      ScrollReveal().reveal(".product-verbete-price", {
+        delay: 600,
+        duration: 2500,
+        distance: "100px",
+        origin: "bottom",
+        reset: true
+      });
+      ScrollReveal().reveal(".product-verbete-btn", {
+        delay: 500,
+        duration: 2500,
+        distance: "100px",
+        origin: "bottom",
+        reset: true
+      });
     },
   },
 };

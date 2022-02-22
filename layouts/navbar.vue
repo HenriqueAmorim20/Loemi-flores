@@ -23,6 +23,8 @@ export default {
     };
   },
   mounted() {
+    this.revealScroll()
+
     // Gets the device width and add a listener to watch changes on the width
     this.width = window.innerWidth;
     this.$nextTick(() => {
@@ -42,6 +44,7 @@ export default {
       this.width = window.innerWidth;
     },
 
+    // Method called everytime window scroll changes
     onScroll() {
       const element = document.getElementById("sobre");
       const y =
@@ -58,6 +61,43 @@ export default {
         (this.width <= 950 ? 60 : 70);
       window.scrollTo({ top: y, behavior: "smooth" });
     },
+
+    revealScroll() {
+      // Navbar desktop
+      ScrollReveal().reveal(".nav-desktop-logo", {
+        delay: 0,
+        duration: 2500,
+        distance: "100px",
+        origin: "top",
+      });
+      ScrollReveal().reveal(".nav-desktop-transition", {
+        delay: 150,
+        duration: 2500,
+        distance: "100px",
+        origin: "top",
+        interval: 150
+      });
+      ScrollReveal().reveal(".nav-desktop-icon", {
+        delay: 750,
+        duration: 2500,
+        distance: "100px",
+        origin: "top",
+      });
+
+      // Navbar mobile
+      ScrollReveal().reveal(".nav-mobile-logo", {
+        delay: 0,
+        duration: 2500,
+        distance: "100px",
+        origin: "top",
+      });
+      ScrollReveal().reveal(".nav-mobile-icon", {
+        delay: 150,
+        duration: 2500,
+        distance: "100px",
+        origin: "top",
+      });
+    }
   },
 };
 </script>
