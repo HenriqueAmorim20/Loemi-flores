@@ -1,13 +1,13 @@
 <template>
-  <div class="main" :id="product.to">
+  <div class="main" :id="product.name">
     <div class="product-img">
       <div class="swiper">
         <!-- Additional required wrapper -->
         <div class="swiper-wrapper">
           <!-- Slides -->
-          <div v-for="img in product.imgs" :key="img" class="swiper-slide">
+          <div v-for="index in 4" :key="index" class="swiper-slide">
             <v-img
-              :src="require(`~/static/${img}`)"
+              :src="require(`~/static/${product.name}/${index}.png`)"
               position="center"
               width="100%"
               height="100%"
@@ -23,7 +23,7 @@
       </div>
     </div>
     <div class="product-verbete">
-      <span class="product-verbete-title">{{ product.name }}</span>
+      <span class="product-verbete-title">{{ product.title }}</span>
       <span class="product-verbete-about">
         {{ product.about }}
       </span>
@@ -60,12 +60,14 @@ export default {
     },
   },
   mounted() {
+    this.revealScroll()
+
     // Swipper init and options
     new Swiper(".swiper", {
-      autoplay: {
-        delay: 10000,
-        disableOnInteraction: false,
-      },
+      // autoplay: {
+      //   delay: 10000,
+      //   disableOnInteraction: false,
+      // },
       speed: 1500,
       pagination: {
         el: ".swiper-pagination",
@@ -79,14 +81,59 @@ export default {
     });
   },
   methods: {
-
     // Returns message to send to whatsapp chat
     getMessage() {
       return (
         "Olá, tudo bem? Tenho interesse no produto " +
-        this.product.to +
+        this.product.name +
         ". Gostaria de mais informações :)"
       );
+    },
+
+    revealScroll() {
+      // Products
+      ScrollReveal().reveal(".product-verbete-title", {
+        delay: 0,
+        duration: 2500,
+        distance: "100px",
+        origin: "bottom",
+
+      });
+      ScrollReveal().reveal(".product-verbete-about", {
+        delay: 150,
+        duration: 2500,
+        distance: "100px",
+        origin: "bottom",
+
+      });
+      ScrollReveal().reveal(".product-verbete-desc", {
+        delay: 300,
+        duration: 2500,
+        distance: "100px",
+        origin: "bottom",
+
+      });
+      ScrollReveal().reveal(".product-verbete-dimension", {
+        delay: 450,
+        duration: 2500,
+        distance: "100px",
+        origin: "bottom",
+
+      });
+      ScrollReveal().reveal(".product-verbete-price", {
+        delay: 600,
+        duration: 2500,
+        distance: "100px",
+        origin: "bottom",
+
+      });
+      ScrollReveal().reveal(".product-verbete-btn", {
+        delay: 500,
+        duration: 2500,
+        distance: "100px",
+        origin: "bottom",
+
+      });
     },
   },
 };
@@ -120,6 +167,16 @@ export default {
 .swiper-pagination {
   position: absolute;
   top: 15px;
+}
+
+.swiper-pagination >>> .swiper-pagination-bullet {
+    margin: 0 5px !important;
+    width: 10px !important;
+    height: 10px !important;
+}
+
+.swiper-pagination >>> .swiper-pagination-bullet-active {
+    background-color: #706063;
 }
 
 .product-verbete {

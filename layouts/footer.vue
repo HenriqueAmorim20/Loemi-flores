@@ -93,7 +93,7 @@ a:hover {
   align-items: center;
   flex-wrap: wrap;
   min-width: 300px;
-  margin: 10px 0 !important;
+  margin: 5px 0 !important;
 }
 
 .footer-logo span {
@@ -119,7 +119,7 @@ a:hover {
   flex-wrap: wrap;
   justify-content: center;
   min-width: 220px !important;
-  margin: 10px 0 !important;
+  margin: 5px 0 !important;
 }
 
 .footer-text span {
@@ -130,14 +130,14 @@ a:hover {
   display: flex;
   align-items: center;
   flex-wrap: wrap;
-  min-width: 290px;
-  margin: 10px 0 !important;
+  min-width: 300px;
+  margin: 5px 0 !important;
 }
 
 .footer-creator span {
   display: flex;
   align-items: center;
-  margin: 5px 20px 0 0 !important;
+  margin: 5px 30px 0 0 !important;
 }
 
 .footer-creator b {

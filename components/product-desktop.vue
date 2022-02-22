@@ -1,8 +1,8 @@
 <template>
-  <div class="main" :id="product.to">
+  <div class="main" :id="product.name">
     <v-row
       class="product"
-      :style="product.position ? 'flex-direction: row-reverse !important;' : ''"
+      :style="invert ? 'flex-direction: row-reverse !important;' : ''"
     >
       <v-col cols="6" class="product-img">
         <!-- Slider main container -->
@@ -10,9 +10,9 @@
           <!-- Additional required wrapper -->
           <div class="swiper-wrapper">
             <!-- Slides -->
-            <div v-for="img in product.imgs" :key="img" class="swiper-slide">
+            <div v-for="index in 4" :key="index" class="swiper-slide">
               <v-img
-                :src="require(`~/static/${img}`)"
+                :src="require(`~/static/${product.name}/${index}.png`)"
                 position="center"
                 width="100%"
                 height="100%"
@@ -29,7 +29,7 @@
       </v-col>
       <v-col cols="6" class="product-info">
         <div class="product-info-verbete">
-          <span class="product-info-verbete-title">{{ product.name }}</span>
+          <span class="product-info-verbete-title">{{ product.title }}</span>
           <span class="product-info-verbete-about">
             {{ product.about }}
           </span>
@@ -75,14 +75,20 @@ export default {
       default: null,
       required: true,
     },
+    invert: {
+      type: Boolean,
+      default: false,
+    },
   },
   mounted() {
+    this.revealScroll();
+
     // Swipper init and options
     new Swiper(".swiper", {
-      autoplay: {
-        delay: 10000,
-        disableOnInteraction: false,
-      },
+      // autoplay: {
+      //   delay: 10000,
+      //   disableOnInteraction: false,
+      // },
       speed: 1500,
       pagination: {
         el: ".swiper-pagination",
@@ -100,9 +106,55 @@ export default {
     getMessage() {
       return (
         "Olá, tudo bem? Tenho interesse no produto " +
-        this.product.to +
+        this.product.name +
         ". Gostaria de mais informações :)"
       );
+    },
+
+    revealScroll() {
+      // Products
+      ScrollReveal().reveal(".product-info-verbete-title", {
+        delay: 0,
+        duration: 2500,
+        distance: "100px",
+        origin: "bottom",
+
+      });
+      ScrollReveal().reveal(".product-info-verbete-about", {
+        delay: 150,
+        duration: 2500,
+        distance: "100px",
+        origin: "bottom",
+
+      });
+      ScrollReveal().reveal(".product-info-verbete-desc", {
+        delay: 300,
+        duration: 2500,
+        distance: "100px",
+        origin: "bottom",
+
+      });
+      ScrollReveal().reveal(".product-info-verbete-dimension", {
+        delay: 450,
+        duration: 2500,
+        distance: "100px",
+        origin: "bottom",
+
+      });
+      ScrollReveal().reveal(".product-info-verbete-price", {
+        delay: 600,
+        duration: 2500,
+        distance: "100px",
+        origin: "bottom",
+
+      });
+      ScrollReveal().reveal(".product-info-verbete-btn", {
+        delay: 600,
+        duration: 2500,
+        distance: "100px",
+        origin: "bottom",
+
+      });
     },
   },
 };
@@ -115,7 +167,17 @@ export default {
 }
 .swiper-pagination {
   position: absolute;
-  top: 15px;
+  top: 10px;
+}
+
+.swiper-pagination >>> .swiper-pagination-bullet {
+    margin: 0 5px !important;
+    width: 10px !important;
+    height: 10px !important;
+}
+
+.swiper-pagination >>> .swiper-pagination-bullet-active {
+    background-color: #706063;
 }
 
 .product {
@@ -183,7 +245,7 @@ export default {
   margin: 50px 0 !important;
   border-radius: 0 !important;
   box-shadow: none !important;
-  width: 150px;
+  min-width: 100px !important;
 }
 
 a {
@@ -193,16 +255,15 @@ a {
 .product-info-verbete-btn span {
   color: #706063 !important;
   font-size: 1.2rem;
+  padding: 5px 30px !important;
 }
 
 .product-info-verbete-btn:hover {
   background-color: #706063 !important;
-  transition: 0.7s all ease !important;
 }
 
 .product-info-verbete-btn:hover span {
   color: #fff !important;
-  transition: 0.7s all ease !important;
 }
 </style>
 

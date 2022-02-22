@@ -3,11 +3,9 @@
     <v-app-bar
       class="nav-mobile"
       height="55px"
-      color="#dbc9cc"
+      :color="changeBg ? '#dbc9cc' : 'transparent' "
       flat
       fixed
-      elevate-on-scroll
-      elevation="5"
     >
       <div class="nav-mobile-logo" @click="scroll('home')">
         <span>LOEMI</span>
@@ -62,6 +60,10 @@ export default {
       type: Array,
       default: null,
     },
+    changeBg: {
+      type: Boolean,
+      default: false,
+    },
   },
   data() {
     return {
@@ -83,6 +85,7 @@ export default {
 <style scoped>
 .nav-mobile {
   padding: 0 5% !important;
+  transition: 1s all ease;
 }
 
 .nav-mobile-logo span {
