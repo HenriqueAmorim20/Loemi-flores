@@ -1,16 +1,19 @@
 <template>
   <div id="index">
     <Home :width="width"/>
+    <About />
   </div>
 </template>
 
 <script>
 import Home from "~/sections/home.vue";
+import About from "~/sections/about.vue";
 
 export default {
   name: 'IndexPage',
   components: {
     Home,
+    About,
   },
   data() {
     return {
