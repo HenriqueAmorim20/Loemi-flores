@@ -17,8 +17,12 @@ export default {
       { name: 'format-detection', content: 'telephone=no' }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.png' }
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.png' },
+      { rel: 'stylesheet', href: 'https://unpkg.com/swiper@8/swiper-bundle.min.css'}
     ],
+    script: [
+      { src: 'https://unpkg.com/swiper@8/swiper-bundle.min.js' }
+    ]
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css

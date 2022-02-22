@@ -5,30 +5,26 @@
       :style="product.position ? 'flex-direction: row-reverse !important;' : ''"
     >
       <v-col cols="6" class="product-img">
-        <div class="product-paginator">
-          <div class="product-paginator-item" v-for="i in product.imgs" :key="i">
-            <div v-if="i === product.imgs[index]" class="product-paginator-item-current"></div>
+        <!-- Slider main container -->
+        <div class="swiper">
+          <!-- Additional required wrapper -->
+          <div class="swiper-wrapper">
+            <!-- Slides -->
+            <div v-for="img in product.imgs" :key="img" class="swiper-slide">
+              <v-img
+                :src="require(`~/static/${img}`)"
+                position="center"
+                width="100%"
+                height="100%"
+              ></v-img>
+            </div>
           </div>
-        </div>
-        <div
-          v-if="index < product.imgs.length - 1"
-          @click="changeImg(1)"
-          class="product-img-icon right"
-        >
-          <Icon :icon="'arrow-right'" :width="50" />
-        </div>
-        <v-img
-          v-if="img"
-          :src="require(`~/static/${img}`)"
-          width="100%"
-          height="100%"
-        ></v-img>
-        <div
-          v-if="index > 0"
-          @click="changeImg(-1)"
-          class="product-img-icon left"
-        >
-          <Icon :icon="'arrow-left'" :width="50" />
+          <!-- pagination -->
+          <div class="swiper-pagination"></div>
+
+          <!-- navigation buttons -->
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next"></div>
         </div>
       </v-col>
       <v-col cols="6" class="product-info">
@@ -47,7 +43,9 @@
               {{ dimension }}
             </span>
           </div>
-          <span class="product-info-verbete-price">R$ {{ product.price }},00</span>
+          <span class="product-info-verbete-price"
+            >R$ {{ product.price }},00</span
+          >
           <v-btn light class="product-info-verbete-btn">
             <span>Comprar</span>
           </v-btn>
@@ -81,6 +79,24 @@ export default {
   mounted() {
     // Set current img to first image of product
     this.img = this.product.imgs[0];
+
+    // Swipper init and options
+    new Swiper(".swiper", {
+      autoplay: {
+        delay: 5000,
+        disableOnInteraction: false,
+      },
+      speed: 1000,
+      pagination: {
+        el: ".swiper-pagination",
+        dynamicBullets: true,
+        color: '#706063',
+      },
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+    });
   },
   methods: {
     // Change index of the current img
@@ -93,67 +109,18 @@ export default {
 </script>
 
 <style scoped>
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+.swiper-pagination {
+  position: absolute;
+  top: 15px;
+}
+
 .product {
   width: 100%;
   height: 85vh;
-}
-
-.product-paginator {
-  position: absolute;
-  width: 100%;
-  top: 10px;
-  z-index: 1;
-  display: flex;
-  justify-content: center;
-}
-
-.product-paginator-item {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #b69ca18a !important;
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-  margin: 5px !important;
-}
-
-.product-paginator-item-current {
-  background-color: rgba(0, 0, 0, 0.281) !important;
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-}
-
-.product-img {
-  position: relative;
-  height: 85vh;
-}
-
-.product-img-icon {
-  position: absolute;
-  z-index: 1;
-  cursor: pointer;
-  transition: 0.7s all ease;
-  top: calc(50% - 50px);
-}
-
-.right {
-  right: 10px;
-}
-
-.left {
-  left: 10px;
-}
-
-.left:hover {
-  transform: translate(-10px, 0px);
-  transition: 0.7s all ease;
-}
-
-.right:hover {
-  transform: translate(10px, 0px);
-  transition: 0.7s all ease;
 }
 
 .product-info {
