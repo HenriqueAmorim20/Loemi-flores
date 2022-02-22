@@ -2,18 +2,21 @@
   <div id="index">
     <Home :width="width"/>
     <About />
+    <Products :width="width"/>
   </div>
 </template>
 
 <script>
 import Home from "~/sections/home.vue";
 import About from "~/sections/about.vue";
+import Products from "~/sections/products.vue";
 
 export default {
   name: 'IndexPage',
   components: {
     Home,
     About,
+    Products
   },
   data() {
     return {
