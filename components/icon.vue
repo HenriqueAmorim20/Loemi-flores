@@ -45,7 +45,7 @@
       />
     </svg>
     <svg
-      v-if="'arrow-down'"
+      v-if="icon === 'arrow-down'"
       xmlns="http://www.w3.org/2000/svg"
       aria-hidden="true"
       role="img"
