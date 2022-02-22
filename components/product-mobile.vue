@@ -169,6 +169,16 @@ export default {
   top: 15px;
 }
 
+.swiper-pagination >>> .swiper-pagination-bullet {
+    margin: 0 5px !important;
+    width: 10px !important;
+    height: 10px !important;
+}
+
+.swiper-pagination >>> .swiper-pagination-bullet-active {
+    background-color: #706063;
+}
+
 .product-verbete {
   position: relative;
   display: flex;

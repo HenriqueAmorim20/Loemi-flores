@@ -130,7 +130,7 @@ a:hover {
   display: flex;
   align-items: center;
   flex-wrap: wrap;
-  min-width: 290px;
+  min-width: 300px;
   margin: 5px 0 !important;
 }
 
