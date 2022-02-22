@@ -12,8 +12,8 @@
         <span>LOEMI</span>
       </div>
       <v-spacer />
-      <div @click.stop="drawer = !drawer">
-        <Icon icon="clarity:menu-line" class="nav-mobile-menu" />
+      <div class="nav-mobile-icon" @click="drawer = !drawer">
+        <Icon :icon="'menu'" />
       </div>
     </v-app-bar>
     <v-navigation-drawer
@@ -25,8 +25,8 @@
       class="nav-drawer"
     >
       <div class="nav-drawer-close">
-        <div @click.stop="drawer = !drawer">
-          <Icon icon="ei:close" class="nav-drawer-close-icon" />
+        <div class="nav-mobile-icon" @click="drawer = !drawer">
+          <Icon :icon="'close'" :width="50" />
         </div>
       </div>
       <div
@@ -49,7 +49,7 @@
 </template>
 
 <script>
-import { Icon } from "@iconify/vue2";
+import Icon from "~/components/icon.vue";
 
 export default {
   name: "NavMobileLayout",
@@ -70,7 +70,10 @@ export default {
   methods: {
     // call parent(navbar) function scroll
     scroll(to) {
-      this.$emit("scroll", to);
+      this.drawer = false;
+      setTimeout(() => {
+        this.$emit("scroll", to);
+      }, 300);
     },
   },
 };
@@ -86,8 +89,9 @@ export default {
   font-size: 2.8rem;
 }
 
-.nav-mobile-menu {
-  font-size: 2.2rem;
+.nav-mobile-icon {
+  display: flex;
+  align-items: center;
 }
 
 .nav-drawer {
