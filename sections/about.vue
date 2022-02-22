@@ -75,6 +75,6 @@ export default {
 .about-name {
   margin-top: 10px !important;
   font-family: "assinatura" !important;
-  font-size: 5rem !important;
+  font-size: 4.5rem !important;
 }
 </style>
