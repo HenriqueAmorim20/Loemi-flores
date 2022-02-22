@@ -3,14 +3,15 @@
     <div v-if="width > 950">
       <ProductDesktop
         v-for="product in products"
-        :key="product.name"
+        :key="product.title"
         :product="product"
+        :invert="products.indexOf(product) % 2 !== 0"
       />
     </div>
     <div v-if="width <= 950">
       <ProductMobile
         v-for="product in products"
-        :key="product.name"
+        :key="product.title"
         :product="product"
       />
     </div>
@@ -37,23 +38,16 @@ export default {
     return {
       products: [
         {
-          name: "mo.no.cro.ma",
+          name: "monocroma",
+          title: "mo.no.cro.ma",
           about: "monocromática; colorida; astral; moderna.",
           desc: ["caixa redonda;"],
           dimensions: ["12x12x12;"],
           price: 147,
-          position: false,
-          to: "monocroma",
-          imgs: [
-            "flower-1.png",
-            "flower-2.png",
-            "flower-3.png",
-            "flower-4.png",
-            "flower-5.png",
-          ],
         },
         {
-          name: "ca.li.ne",
+          name: "caline",
+          title: "ca.li.ne",
           about: "carinhosa; alcoólica; romântica; sutil.",
           desc: [
             "caixa quadrada;",
@@ -64,18 +58,10 @@ export default {
           ],
           dimensions: ["15x15x12;"],
           price: 280,
-          position: true,
-          to: "caline",
-          imgs: [
-            "flower-5.png",
-            "flower-2.png",
-            "flower-3.png",
-            "flower-4.png",
-            "flower-1.png",
-          ],
         },
         {
-          name: "sur.pris",
+          name: "surpris",
+          title: "sur.pris",
           about: "surpreendente; encantada; sofisticada; inesperada.",
           desc: [
             "caixa surpresa;",
@@ -86,18 +72,10 @@ export default {
             "14x14x11 (caixa quadrada);",
           ],
           price: 350,
-          position: false,
-          to: "surpris",
-          imgs: [
-            "flower-2.png",
-            "flower-1.png",
-            "flower-3.png",
-            "flower-4.png",
-            "flower-5.png",
-          ],
         },
         {
-          name: "e.le.gan.ce",
+          name: "elegance",
+          title: "e.le.gan.ce",
           about: "elegante; nobre; única; pura arte.",
           desc: [
             "caixa redonda;",
@@ -106,31 +84,14 @@ export default {
           ],
           dimensions: ["15x15x12;"],
           price: 240,
-          position: true,
-          to: "elegance",
-          imgs: [
-            "flower-3.png",
-            "flower-2.png",
-            "flower-1.png",
-            "flower-4.png",
-            "flower-5.png",
-          ],
         },
         {
-          name: "bou.quet",
+          name: "bouquet",
+          title: "bou.quet",
           about: "clássico; espontâneo; memorável; não precisa de ocasião.",
           desc: ["aproximadamente 20 hastes;"],
           dimensions: [],
           price: 250,
-          position: false,
-          to: "bouquet",
-          imgs: [
-            "flower-4.png",
-            "flower-2.png",
-            "flower-3.png",
-            "flower-1.png",
-            "flower-5.png",
-          ],
         },
       ],
     };

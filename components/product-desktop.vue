@@ -1,8 +1,8 @@
 <template>
-  <div class="main" :id="product.to">
+  <div class="main" :id="product.name">
     <v-row
       class="product"
-      :style="product.position ? 'flex-direction: row-reverse !important;' : ''"
+      :style="invert ? 'flex-direction: row-reverse !important;' : ''"
     >
       <v-col cols="6" class="product-img">
         <!-- Slider main container -->
@@ -10,9 +10,9 @@
           <!-- Additional required wrapper -->
           <div class="swiper-wrapper">
             <!-- Slides -->
-            <div v-for="img in product.imgs" :key="img" class="swiper-slide">
+            <div v-for="index in 4" :key="index" class="swiper-slide">
               <v-img
-                :src="require(`~/static/${img}`)"
+                :src="require(`~/static/${product.name}/${index}.png`)"
                 position="center"
                 width="100%"
                 height="100%"
@@ -29,7 +29,7 @@
       </v-col>
       <v-col cols="6" class="product-info">
         <div class="product-info-verbete">
-          <span class="product-info-verbete-title">{{ product.name }}</span>
+          <span class="product-info-verbete-title">{{ product.title }}</span>
           <span class="product-info-verbete-about">
             {{ product.about }}
           </span>
@@ -75,14 +75,18 @@ export default {
       default: null,
       required: true,
     },
+    invert: {
+      type: Boolean,
+      default: false,
+    },
   },
   mounted() {
     // Swipper init and options
     new Swiper(".swiper", {
-      autoplay: {
-        delay: 10000,
-        disableOnInteraction: false,
-      },
+      // autoplay: {
+      //   delay: 10000,
+      //   disableOnInteraction: false,
+      // },
       speed: 1500,
       pagination: {
         el: ".swiper-pagination",
@@ -100,7 +104,7 @@ export default {
     getMessage() {
       return (
         "Olá, tudo bem? Tenho interesse no produto " +
-        this.product.to +
+        this.product.name +
         ". Gostaria de mais informações :)"
       );
     },
