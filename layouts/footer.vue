@@ -1,20 +1,20 @@
 <template>
   <footer id="footer">
-    <v-row class="footer" justify="center">
-      <v-col class="footer-logo" cols="4">
-        <span>LOEMI</span>
+    <v-row class="footer" justify="start">
+      <v-col class="footer-logo" cols="5">
+        <span @click="scroll()">LOEMI</span>
         <div class="footer-logo-icons">
-          <a href="#" target="_blank" rel="noopener noreferrer">
-            <Icon :icon="'insta'" :width="30" :color="'#706063'" />
-            <span>(61) 99999-99999</span>
+          <a href="" target="_blank" rel="noopener noreferrer">
+            <Icon :icon="'wpp'" :width="25" :color="'#706063'" />
+            <span>(61) 98177-1264</span>
           </a>
-          <a href="#" target="_blank" rel="noopener noreferrer">
-            <Icon :icon="'wpp'" :width="30" :color="'#706063'" />
+          <a href="https://www.instagram.com/loemiflores/" target="_blank" rel="noopener noreferrer">
+            <Icon :icon="'insta'" :width="25" :color="'#706063'" />
             <span>@loemiflores</span>
           </a>
         </div>
       </v-col>
-      <v-col class="footer-text" cols="4">
+      <v-col class="footer-text" cols="3">
         <span> All rights reserved &copy; {{ new Date().getFullYear() }} </span>
       </v-col>
       <v-col class="footer-creator" cols="4">
@@ -49,13 +49,17 @@ export default {
   components: {
     Icon,
   },
+  methods: {
+    scroll() {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    },
+  },
 };
 </script>
 
 <style scoped>
 .footer {
-  /* background-color: #b69ca1 !important; */
-  padding: 0 2% 15px 5% !important;
+  padding: 30px 25px!important;
 }
 
 span {
@@ -67,7 +71,7 @@ a {
   align-items: center;
   text-decoration: none;
   padding: 2px !important;
-  margin: 0 0 0 10px !important;
+  margin: 0 10px 0 0 !important;
   transition: 0.7s all ease;
 }
 
@@ -85,8 +89,9 @@ a:hover {
 }
 
 .footer-logo span {
-  font-size: 3rem;
-  margin-right: 20px !important;
+  cursor: pointer;
+  font-size: 2.5rem;
+  margin-right: 10px !important;
 }
 
 .footer-logo-icons {
@@ -105,7 +110,7 @@ a:hover {
   align-items: center;
   flex-wrap: wrap;
   justify-content: center;
-  min-width: 300px !important;
+  min-width: 210px !important;
   margin: 20px 0 0 !important;
 }
 
@@ -117,9 +122,8 @@ a:hover {
 .footer-creator {
   display: flex;
   align-items: center;
-  /* justify-content: flex-end; */
   flex-wrap: wrap;
-  min-width: 300px;
+  min-width: 280px;
   margin: 20px 0 0 !important;
 }
 

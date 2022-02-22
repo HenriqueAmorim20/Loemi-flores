@@ -50,6 +50,10 @@ export default {
   color: #706063;
 }
 
+body {
+  overflow: hidden !important;
+}
+
 .background {
   background-color: #dbc9cc !important;
 }

@@ -100,7 +100,7 @@
       />
     </svg>
     <svg
-      v-if="icon === 'insta'"
+      v-if="icon === 'wpp'"
       xmlns="http://www.w3.org/2000/svg"
       aria-hidden="true"
       :width="width"
@@ -114,7 +114,7 @@
       />
     </svg>
     <svg
-      v-if="icon === 'wpp'"
+      v-if="icon === 'insta'"
       xmlns="http://www.w3.org/2000/svg"
       aria-hidden="true"
       :width="width"
