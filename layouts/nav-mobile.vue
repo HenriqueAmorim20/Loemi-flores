@@ -7,6 +7,7 @@
       flat
       fixed
       elevate-on-scroll
+      elevation="5"
     >
       <div class="nav-mobile-logo" @click="scroll('home')">
         <span>LOEMI</span>

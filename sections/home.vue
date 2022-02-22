@@ -89,7 +89,7 @@ export default {
 .home-icon {
   position: absolute;
   bottom: 20px;
-  left: calc(50% - 24px);
+  left: calc(50% - 20px);
   font-size: 3rem;
   cursor: pointer;
   animation: bounce 1s infinite alternate;

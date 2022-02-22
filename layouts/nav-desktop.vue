@@ -1,6 +1,7 @@
 <template>
   <div id="nav-desktop">
-    <v-app-bar class="nav-desktop" height="70px" color="#dbc9cc" flat fixed>
+    <v-app-bar class="nav-desktop" height="70px" color="#dbc9cc" flat fixed elevate-on-scroll
+      elevation="5">
       <div class="nav-desktop-logo" @click="scroll('home')">
         <span>LOEMI</span>
       </div>
@@ -58,8 +59,8 @@ export default {
 
 .nav-desktop-divider {
   flex: 1 1 auto;
-  border-bottom: 1px solid rgba(112, 96, 99, 0.219);
-  margin: 0 20px 0 35px !important;
+  /* border-bottom: 1px solid rgba(112, 96, 99, 0.219);
+  margin: 0 20px 0 35px !important; */
 }
 
 .nav-desktop-transition {
