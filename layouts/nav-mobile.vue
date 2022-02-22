@@ -1,11 +1,11 @@
 <template>
-  <div id="index">
-    index
+  <div id="nav-mobile">
+    nav-mobile
   </div>
 </template>
 
 <script>
 export default {
-  name: 'IndexPage'
+  name: 'NavMobileLayout',
 }
 </script>

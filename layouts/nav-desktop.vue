@@ -1,11 +1,11 @@
 <template>
-  <div id="index">
-    index
+  <div id="nav-desktop">
+    nav-desktop
   </div>
 </template>
 
 <script>
 export default {
-  name: 'IndexPage'
+  name: 'NavDesktopLayout',
 }
 </script>

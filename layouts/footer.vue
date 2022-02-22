@@ -1,11 +1,11 @@
 <template>
-  <div id="index">
-    index
+  <div id="footer">
+    footer
   </div>
 </template>
 
 <script>
 export default {
-  name: 'IndexPage'
+  name: 'FooterLayout',
 }
 </script>
