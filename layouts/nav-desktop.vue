@@ -84,4 +84,8 @@ export default {
   font-size: 1.4rem;
   text-transform: lowercase;
 }
+
+.nav-desktop-icon {
+  margin: 0 0 0 20px !important;
+}
 </style>
