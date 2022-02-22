@@ -65,7 +65,7 @@ export default {
 .nav-desktop-transition {
   display: inline-block;
   width: fit-content;
-  margin: 0 30px 0 0 !important;
+  margin: 0 15px !important;
   cursor: pointer;
 }
 
