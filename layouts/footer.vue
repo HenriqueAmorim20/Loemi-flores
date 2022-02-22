@@ -5,12 +5,12 @@
         <span @click="scroll()">LOEMI</span>
         <div class="footer-logo-icons">
           <a href="" target="_blank" rel="noopener noreferrer">
-            <Icon :icon="'wpp'" :width="25" :color="'#706063'" />
-            <span>(61) 98177-1264</span>
+            <Icon :icon="'wpp'" :width="25" :color="'#fff'" />
+            <p>(61) 98177-1264</p>
           </a>
           <a href="https://www.instagram.com/loemiflores/" target="_blank" rel="noopener noreferrer">
-            <Icon :icon="'insta'" :width="25" :color="'#706063'" />
-            <span>@loemiflores</span>
+            <Icon :icon="'insta'" :width="25" :color="'#fff'" />
+            <p>@loemiflores</p>
           </a>
         </div>
       </v-col>
@@ -26,14 +26,14 @@
             target="_blank"
             rel="noopener noreferrer"
           >
-            <Icon :icon="'linkedin'" :width="25" :color="'#706063'" />
+            <Icon :icon="'linkedin'" :width="25" :color="'#fff'" />
           </a>
           <a
             href="https://github.com/HenriqueAmorim20"
             target="_blank"
             rel="noopener noreferrer"
           >
-            <Icon :icon="'github'" :width="25" :color="'#706063'" />
+            <Icon :icon="'github'" :width="25" :color="'#fff'" />
           </a>
         </div>
       </v-col>
@@ -59,11 +59,12 @@ export default {
 
 <style scoped>
 .footer {
-  padding: 30px 25px!important;
+  padding: 0px 25px !important;
+  background-color: #b69ca1 !important;
 }
 
-span {
-  color: #706063 !important;
+span , p, b{
+  color: #fff !important;
 }
 
 a {
@@ -85,13 +86,13 @@ a:hover {
   align-items: center;
   flex-wrap: wrap;
   min-width: 300px;
-  margin: 20px 0 0 !important;
+  margin: 10px 0 !important;
 }
 
 .footer-logo span {
   cursor: pointer;
   font-size: 2.5rem;
-  margin-right: 10px !important;
+  margin-right: 30px !important;
 }
 
 .footer-logo-icons {
@@ -100,7 +101,7 @@ a:hover {
   flex-wrap: wrap;
 }
 
-.footer-logo-icons span {
+.footer-logo-icons p {
   font-size: 1.1rem !important;
   margin-left: 5px !important;
 }
@@ -111,12 +112,11 @@ a:hover {
   flex-wrap: wrap;
   justify-content: center;
   min-width: 210px !important;
-  margin: 20px 0 0 !important;
+  margin: 10px 0 !important;
 }
 
 .footer-text span {
   font-size: 1.3rem;
-  margin-right: 0px !important;
 }
 
 .footer-creator {
@@ -124,7 +124,7 @@ a:hover {
   align-items: center;
   flex-wrap: wrap;
   min-width: 280px;
-  margin: 20px 0 0 !important;
+  margin: 10px 0 !important;
 }
 
 .footer-creator span {
