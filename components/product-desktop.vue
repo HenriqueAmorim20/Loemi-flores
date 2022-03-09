@@ -118,42 +118,36 @@ export default {
         duration: 2500,
         distance: "100px",
         origin: "bottom",
-
       });
       ScrollReveal().reveal(".product-info-verbete-about", {
         delay: 150,
         duration: 2500,
         distance: "100px",
         origin: "bottom",
-
       });
       ScrollReveal().reveal(".product-info-verbete-desc", {
         delay: 300,
         duration: 2500,
         distance: "100px",
         origin: "bottom",
-
       });
       ScrollReveal().reveal(".product-info-verbete-dimension", {
         delay: 450,
         duration: 2500,
         distance: "100px",
         origin: "bottom",
-
       });
       ScrollReveal().reveal(".product-info-verbete-price", {
         delay: 600,
         duration: 2500,
         distance: "100px",
         origin: "bottom",
-
       });
       ScrollReveal().reveal(".product-info-verbete-btn", {
         delay: 600,
         duration: 2500,
         distance: "100px",
         origin: "bottom",
-
       });
     },
   },
@@ -171,13 +165,13 @@ export default {
 }
 
 .swiper-pagination >>> .swiper-pagination-bullet {
-    margin: 0 5px !important;
-    width: 10px !important;
-    height: 10px !important;
+  margin: 0 5px !important;
+  width: 10px !important;
+  height: 10px !important;
 }
 
 .swiper-pagination >>> .swiper-pagination-bullet-active {
-    background-color: #706063;
+  background-color: #706063;
 }
 
 .product {
@@ -239,6 +233,7 @@ export default {
 }
 
 .product-info-verbete-btn {
+  position: relative;
   background: transparent !important;
   border: 1px solid #706063;
   color: #706063 !important;
@@ -246,6 +241,28 @@ export default {
   border-radius: 0 !important;
   box-shadow: none !important;
   min-width: 100px !important;
+}
+
+.product-info-verbete-btn:after {
+  position: absolute;
+  content: "";
+  width: 0;
+  height: 100%;
+  top: 0;
+  left: 0;
+  direction: rtl;
+  z-index: -1;
+  background: #706063;
+  transition: all 0.3s ease;
+}
+
+.product-info-verbete-btn:hover:after {
+  left: 0;
+  right: auto;
+  width: 100%;
+}
+.product-info-verbete-btn:active {
+  top: 2px;
 }
 
 a {
@@ -258,12 +275,7 @@ a {
   padding: 5px 30px !important;
 }
 
-.product-info-verbete-btn:hover {
-  background-color: #706063 !important;
-}
-
 .product-info-verbete-btn:hover span {
   color: #fff !important;
 }
 </style>
-
