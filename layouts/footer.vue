@@ -4,12 +4,20 @@
       <v-col class="footer-logo" cols="5">
         <span @click="scroll()">LOEMI</span>
         <div class="footer-logo-icons">
-          <a :href="'https://wa.me/5561981771264?text=' + getMessage()" target="_blank" rel="noopener noreferrer">
-            <Icon :icon="'wpp'" :width="25" :color="'#fff'" />
+          <a
+            :href="'https://wa.me/5561981771264?text=' + getMessage()"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Icon :icon="'wpp'" :width="25" :color="'#706063'" />
             <p>(61) 98177-1264</p>
           </a>
-          <a href="https://www.instagram.com/loemiflores/" target="_blank" rel="noopener noreferrer">
-            <Icon :icon="'insta'" :width="25" :color="'#fff'" />
+          <a
+            href="https://www.instagram.com/loemiflores/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Icon :icon="'insta'" :width="25" :color="'#706063'" />
             <p>@loemiflores</p>
           </a>
         </div>
@@ -26,14 +34,14 @@
             target="_blank"
             rel="noopener noreferrer"
           >
-            <Icon :icon="'linkedin'" :width="25" :color="'#fff'" />
+            <Icon :icon="'linkedin'" :width="25" :color="'#706063'" />
           </a>
           <a
             href="https://github.com/HenriqueAmorim20"
             target="_blank"
             rel="noopener noreferrer"
           >
-            <Icon :icon="'github'" :width="25" :color="'#fff'" />
+            <Icon :icon="'github'" :width="25" :color="'#706063'" />
           </a>
         </div>
       </v-col>
@@ -50,7 +58,6 @@ export default {
     Icon,
   },
   methods: {
-
     //Scrolls to the top of the page
     scroll() {
       window.scrollTo({ top: 0, behavior: "smooth" });
@@ -58,20 +65,22 @@ export default {
 
     // Returns the message to sent in whatsapp chat
     getMessage() {
-      return "Olá, tudo bem? Gostaria de tirar umas dúvidas com você :)"
-    }
+      return "Olá, tudo bem? Gostaria de tirar umas dúvidas com você :)";
+    },
   },
 };
 </script>
 
 <style scoped>
 .footer {
-  padding: 0px 25px !important;
-  background-color: #b69ca1 !important;
+  padding: 4rem 25px 0 !important;
+  background-color: #dbc9cc;
 }
 
-span , p, b{
-  color: #fff !important;
+span,
+p,
+b {
+  color: #706063 !important;
 }
 
 a {
