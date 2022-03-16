@@ -1,10 +1,14 @@
 <template>
   <v-app class="background">
-    <Navbar />
+    <div class="logo">
+      <span style="">LOEMI</span>
+      <p>em breve...</p>
+    </div>
+    <!-- <Navbar />
     <v-main>
       <Nuxt />
     </v-main>
-    <Footer />
+    <Footer />-->
   </v-app>
 </template>
 
@@ -22,6 +26,22 @@ export default {
 </script>
 
 <style>
+.logo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.logo span {
+  font-size: 5rem;
+}
+
+.logo p {
+  font-size: 2rem;
+}
+
 /* Global styles */
 @font-face {
   font-family: "cormorantLight";
