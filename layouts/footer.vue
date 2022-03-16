@@ -1,51 +1,47 @@
 <template>
-  <footer id="footer">
-    <v-row class="footer" justify="start">
-      <v-col class="footer-logo" cols="5">
-        <span @click="scroll()">LOEMI</span>
-        <div class="footer-logo-icons">
-          <a
-            :href="'https://wa.me/5561981771264?text=' + getMessage()"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Icon :icon="'wpp'" :width="25" :color="'#706063'" />
-            <p>(61) 98177-1264</p>
-          </a>
-          <a
-            href="https://www.instagram.com/loemiflores/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Icon :icon="'insta'" :width="25" :color="'#706063'" />
-            <p>@loemiflores</p>
-          </a>
-        </div>
-      </v-col>
-      <v-col class="footer-text" cols="3">
-        <span> All rights reserved &copy; {{ new Date().getFullYear() }} </span>
-      </v-col>
-      <v-col class="footer-creator" cols="4">
-        <v-spacer></v-spacer>
-        <span>Created By: <b>Henrique Melo</b></span>
-        <div class="footer-creator-icons">
-          <a
-            href="https://www.linkedin.com/in/henriqueamorim20/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Icon :icon="'linkedin'" :width="25" :color="'#706063'" />
-          </a>
-          <a
-            href="https://github.com/HenriqueAmorim20"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Icon :icon="'github'" :width="25" :color="'#706063'" />
-          </a>
-        </div>
-      </v-col>
-    </v-row>
+  <footer id="footer" class="footer">
+    <section class="one">
+      <span @click="scroll()">LOEMI</span>
+      <a
+        :href="'https://wa.me/5561981771264?text=' + getMessage()"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <Icon class="icon" :icon="'wpp'" :width="25" :color="'#706063'" />
+      </a>
+      <a
+        href="https://www.instagram.com/loemiflores/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <Icon class="icon" :icon="'insta'" :width="25" :color="'#706063'" />
+      </a>
+    </section>
+    <section class="two">
+      <span> All rights reserved &copy; {{ new Date().getFullYear() }} </span>
+    </section>
+    <section class="three">
+      <a
+        href="http://melohenrique.com"
+        target="_blank"
+        rel="noopener noreferrer"
+        >Created By: Henrique Melo
+      </a>
+      <a
+        href="https://www.linkedin.com/in/henriqueamorim20/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <Icon class="icon" :icon="'linkedin'" :width="20" :color="'#706063'" />
+      </a>
+      <a
+        href="https://github.com/HenriqueAmorim20"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <Icon class="icon" :icon="'github'" :width="20" :color="'#706063'" />
+      </a>
+    </section>
   </footer>
 </template>
 
@@ -73,88 +69,73 @@ export default {
 
 <style scoped>
 .footer {
-  padding: 4rem 25px 0 !important;
-  background-color: #dbc9cc;
+  display: grid;
+  grid-template-areas: "one two three";
+  gap: 2rem;
+  padding: 0rem 4rem !important;
 }
 
-span,
-p,
-b {
-  color: #706063 !important;
-}
-
-a {
+.one {
+  grid-area: one;
   display: flex;
   align-items: center;
-  text-decoration: none;
-  padding: 2px !important;
-  margin: 0 10px 0 0 !important;
-  transition: 0.7s all ease;
 }
 
-a:hover {
-  transform: translate(0, -10px);
-  transition: 0.7s all ease;
+.one span {
+  font-size: clamp(2.5rem, 4vw, 3rem);
+  margin-right: 1rem !important;
 }
 
-.footer-logo {
+.one a {
+  margin: 0 0.5rem !important;
+}
+
+.two {
+  grid-area: two;
   display: flex;
   align-items: center;
-  flex-wrap: wrap;
-  min-width: 300px;
-  margin: 5px 0 !important;
-}
-
-.footer-logo span {
-  cursor: pointer;
-  font-size: 2.5rem;
-  margin-right: 30px !important;
-}
-
-.footer-logo-icons {
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-}
-
-.footer-logo-icons p {
-  font-size: 1.1rem !important;
-  margin-left: 5px !important;
-}
-
-.footer-text {
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
   justify-content: center;
-  min-width: 220px !important;
-  margin: 5px 0 !important;
-}
-
-.footer-text span {
   font-size: 1.3rem;
 }
 
-.footer-creator {
+.three {
+  grid-area: three;
   display: flex;
   align-items: center;
-  flex-wrap: wrap;
-  min-width: 300px;
-  margin: 5px 0 !important;
+  justify-content: flex-end;
 }
 
-.footer-creator span {
-  display: flex;
-  align-items: center;
-  margin: 5px 30px 0 0 !important;
+.three a {
+  text-decoration: none;
+  font-size: 1.2rem;
+  color: #706063;
+  margin: 0 0.5rem !important;
 }
 
-.footer-creator b {
-  margin: 0 0 0 10px !important;
+.icon {
+  transition: transform 0.7s ease;
 }
 
-.footer-creator-icons {
-  display: flex;
-  align-items: center;
+.icon:hover {
+  transform: translateY(-5px);
+}
+
+@media (max-width: 950px) {
+  .footer {
+    grid-template-areas:
+      "one"
+      "two"
+      "three";
+    padding: 1rem !important;
+  }
+
+  .one,
+  .two,
+  .three {
+    justify-content: flex-start;
+  }
+  .three a {
+    margin: 0 0.5rem 0 0 !important;
+  }
 }
 </style>
