@@ -75,7 +75,7 @@ export default {
   display: grid;
   grid-template-areas: "one two three";
   gap: 2rem;
-  padding: 0.5rem 2rem !important;
+  padding: 0.5rem 1rem !important;
 }
 
 .one {
@@ -91,7 +91,7 @@ export default {
 
 .one a {
   display: flex;
-  margin: 0 0.5rem !important;
+  margin: 0 1rem 0 0 !important;
   text-decoration: none;
 }
 
@@ -118,7 +118,7 @@ export default {
   text-decoration: none;
   font-size: 1.1rem;
   color: #706063;
-  margin: 0 0.5rem !important;
+  margin: 0 0 0 1rem !important;
 }
 
 .icon {

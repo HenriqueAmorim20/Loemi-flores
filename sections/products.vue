@@ -101,25 +101,5 @@ export default {
       ],
     };
   },
-  mounted() {
-    this.revealScroll();
-  },
-  methods: {
-    revealScroll() {
-      // Products
-      ScrollReveal().reveal(".product-info", {
-        delay: 100,
-        duration: 2000,
-        distance: "100px",
-        origin: "bottom",
-      });
-      ScrollReveal().reveal(".product-verbete-info", {
-        delay: 100,
-        duration: 1500,
-        distance: "100px",
-        origin: "bottom",
-      });
-    },
-  },
 };
 </script>

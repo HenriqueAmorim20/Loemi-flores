@@ -1,6 +1,12 @@
 <template>
   <div id="nav-desktop">
-    <v-app-bar class="nav-desktop" height="70px" :color="changeBg ? '#dbc9cc' : 'transparent' " flat fixed>
+    <v-app-bar
+      class="nav-desktop"
+      height="70px"
+      :color="changeBg ? '#dbc9cc' : 'transparent'"
+      flat
+      fixed
+    >
       <div class="nav-desktop-logo" @click="scroll('home')">
         <span>LOEMI</span>
       </div>

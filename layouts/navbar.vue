@@ -48,7 +48,7 @@ export default {
     onScroll() {
       const element = document.getElementById("sobre");
       const y =
-        element?.getBoundingClientRect().top - (this.width <= 950 ? 55 : 70);
+        element?.getBoundingClientRect().top - (this.width <= 950 ? 56 : 71);
       this.changeBg = y <= 0
     },
 

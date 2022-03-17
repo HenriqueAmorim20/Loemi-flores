@@ -18,8 +18,8 @@ export default {
 .papelaria {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 1rem;
-  padding: 1rem !important;
+  gap: 0.75rem;
+  padding: 0.75rem !important;
 }
 
 .papelaria-title {

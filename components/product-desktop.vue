@@ -20,6 +20,7 @@
                 position="center"
                 width="100%"
                 height="100%"
+                class="swiper-lazy"
               ></v-img>
             </div>
           </div>
@@ -87,10 +88,7 @@ export default {
   mounted() {
     // Swipper init and options
     new Swiper(".swiper", {
-      // autoplay: {
-      //   delay: 10000,
-      //   disableOnInteraction: false,
-      // },
+      lazy: true,
       speed: 1500,
       pagination: {
         el: ".swiper-pagination",
@@ -102,8 +100,18 @@ export default {
       },
       effect: "fade",
     });
+    this.revealScroll();
   },
   methods: {
+    revealScroll() {
+      // Products
+      ScrollReveal().reveal(".product-info-verbete", {
+        delay: 100,
+        duration: 1500,
+        distance: "100px",
+        origin: "bottom",
+      });
+    },
     // Returns message to send to whatsapp chat
     getMessage() {
       return (
