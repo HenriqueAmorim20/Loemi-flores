@@ -20,7 +20,6 @@ export default {
   grid-template-columns: repeat(4, 1fr);
   gap: 0.75rem;
   padding: 0.75rem !important;
-  background-color: #ebebeb;
 }
 
 .papelaria-title {
@@ -36,11 +35,9 @@ export default {
   margin: 0 auto !important;
   width: 100%;
   padding: 1rem !important;
-  border: 1px solid #7060632d;
 }
 .papelaria-img {
   aspect-ratio: 1;
-  border: 1px solid #7060632d;
 }
 
 @media (max-width: 900px) {

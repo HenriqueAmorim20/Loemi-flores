@@ -4,8 +4,6 @@
       class="nav-desktop"
       height="70px"
       :color="changeBg ? '#dbc9cc' : 'transparent'"
-      elevate-on-scroll
-      :elevation="changeBg ? 5 : 0"
       flat
       fixed
     >

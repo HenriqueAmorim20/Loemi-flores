@@ -4,8 +4,6 @@
       class="nav-mobile"
       height="55px"
       :color="changeBg ? '#dbc9cc' : 'transparent'"
-      elevate-on-scroll
-      :elevation="changeBg ? 5 : 0"
       flat
       fixed
     >
