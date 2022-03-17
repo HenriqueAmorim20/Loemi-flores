@@ -20,6 +20,7 @@
                 position="center"
                 width="100%"
                 height="100%"
+                class="swiper-lazy"
               ></v-img>
             </div>
           </div>
@@ -87,6 +88,7 @@ export default {
   mounted() {
     // Swipper init and options
     new Swiper(".swiper", {
+      lazy: true,
       speed: 1500,
       pagination: {
         el: ".swiper-pagination",
