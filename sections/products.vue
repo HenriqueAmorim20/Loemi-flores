@@ -44,6 +44,7 @@ export default {
           desc: ["caixa redonda;"],
           dimensions: ["12x12x12;"],
           price: 147,
+          qtdImgs: 6,
         },
         {
           name: "caline",
@@ -58,6 +59,7 @@ export default {
           ],
           dimensions: ["15x15x12;"],
           price: 280,
+          qtdImgs: 3,
         },
         {
           name: "surpris",
@@ -72,6 +74,7 @@ export default {
             "14x14x11 (caixa quadrada);",
           ],
           price: 350,
+          qtdImgs: 5,
         },
         {
           name: "elegance",
@@ -84,6 +87,7 @@ export default {
           ],
           dimensions: ["15x15x12;"],
           price: 240,
+          qtdImgs: 5,
         },
         {
           name: "bouquet",
@@ -92,9 +96,30 @@ export default {
           desc: ["aproximadamente 20 hastes;"],
           dimensions: [],
           price: 250,
+          qtdImgs: 4,
         },
       ],
     };
+  },
+  mounted() {
+    this.revealScroll();
+  },
+  methods: {
+    revealScroll() {
+      // Products
+      ScrollReveal().reveal(".product-info", {
+        delay: 100,
+        duration: 2000,
+        distance: "100px",
+        origin: "bottom",
+      });
+      ScrollReveal().reveal(".product-verbete-info", {
+        delay: 100,
+        duration: 1500,
+        distance: "100px",
+        origin: "bottom",
+      });
+    },
   },
 };
 </script>

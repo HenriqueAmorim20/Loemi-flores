@@ -20,7 +20,7 @@
           contain
           width="30"
           height="40"
-          :src="require('~/static/logo-icon.png')"
+          :src="require('~/static/favicon.png')"
         ></v-img>
       </div>
     </v-app-bar>

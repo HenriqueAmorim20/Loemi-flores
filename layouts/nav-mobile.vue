@@ -41,7 +41,7 @@
         contain
         width="50"
         height="60"
-        :src="require('~/static/logo-icon.png')"
+        :src="require('~/static/favicon.png')"
       />
     </v-navigation-drawer>
   </div>

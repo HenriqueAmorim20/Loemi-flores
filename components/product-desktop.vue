@@ -10,7 +10,11 @@
           <!-- Additional required wrapper -->
           <div class="swiper-wrapper">
             <!-- Slides -->
-            <div v-for="index in 4" :key="index" class="swiper-slide">
+            <div
+              v-for="index in product.qtdImgs"
+              :key="index"
+              class="swiper-slide"
+            >
               <v-img
                 :src="require(`~/static/${product.name}/${index}.png`)"
                 position="center"
@@ -81,8 +85,6 @@ export default {
     },
   },
   mounted() {
-    this.revealScroll();
-
     // Swipper init and options
     new Swiper(".swiper", {
       // autoplay: {
@@ -109,46 +111,6 @@ export default {
         this.product.name +
         ". Gostaria de mais informações :)"
       );
-    },
-
-    revealScroll() {
-      // Products
-      ScrollReveal().reveal(".product-info-verbete-title", {
-        delay: 0,
-        duration: 2500,
-        distance: "100px",
-        origin: "bottom",
-      });
-      ScrollReveal().reveal(".product-info-verbete-about", {
-        delay: 150,
-        duration: 2500,
-        distance: "100px",
-        origin: "bottom",
-      });
-      ScrollReveal().reveal(".product-info-verbete-desc", {
-        delay: 300,
-        duration: 2500,
-        distance: "100px",
-        origin: "bottom",
-      });
-      ScrollReveal().reveal(".product-info-verbete-dimension", {
-        delay: 450,
-        duration: 2500,
-        distance: "100px",
-        origin: "bottom",
-      });
-      ScrollReveal().reveal(".product-info-verbete-price", {
-        delay: 600,
-        duration: 2500,
-        distance: "100px",
-        origin: "bottom",
-      });
-      ScrollReveal().reveal(".product-info-verbete-btn", {
-        delay: 600,
-        duration: 2500,
-        distance: "100px",
-        origin: "bottom",
-      });
     },
   },
 };

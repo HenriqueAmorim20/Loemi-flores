@@ -5,7 +5,11 @@
         <!-- Additional required wrapper -->
         <div class="swiper-wrapper">
           <!-- Slides -->
-          <div v-for="index in 4" :key="index" class="swiper-slide">
+          <div
+            v-for="index in product.qtdImgs"
+            :key="index"
+            class="swiper-slide"
+          >
             <v-img
               :src="require(`~/static/${product.name}/${index}.png`)"
               position="center"
@@ -23,28 +27,30 @@
       </div>
     </div>
     <div class="product-verbete">
-      <span class="product-verbete-title">{{ product.title }}</span>
-      <span class="product-verbete-about">
-        {{ product.about }}
-      </span>
-      <div class="product-verbete-desc">
-        <span v-for="desc in product.desc" :key="desc">
-          {{ desc }}
+      <div class="product-verbete-info">
+        <span class="product-verbete-title">{{ product.title }}</span>
+        <span class="product-verbete-about">
+          {{ product.about }}
         </span>
+        <div class="product-verbete-desc">
+          <span v-for="desc in product.desc" :key="desc">
+            {{ desc }}
+          </span>
+        </div>
+        <div class="product-verbete-dimension">
+          <span v-for="dimension in product.dimensions" :key="dimension">
+            {{ dimension }}
+          </span>
+        </div>
+        <span class="product-verbete-price">R$ {{ product.price }},00</span>
+        <a
+          :href="'https://wa.me/5561981771264?text=' + getMessage()"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <v-btn class="product-verbete-btn"> <span>Comprar</span> </v-btn>
+        </a>
       </div>
-      <div class="product-verbete-dimension">
-        <span v-for="dimension in product.dimensions" :key="dimension">
-          {{ dimension }}
-        </span>
-      </div>
-      <span class="product-verbete-price">R$ {{ product.price }},00</span>
-      <a
-        :href="'https://wa.me/5561981771264?text=' + getMessage()"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        <v-btn class="product-verbete-btn"> <span>Comprar</span> </v-btn>
-      </a>
     </div>
   </div>
 </template>
@@ -60,8 +66,6 @@ export default {
     },
   },
   mounted() {
-    this.revealScroll()
-
     // Swipper init and options
     new Swiper(".swiper", {
       // autoplay: {
@@ -88,52 +92,6 @@ export default {
         this.product.name +
         ". Gostaria de mais informações :)"
       );
-    },
-
-    revealScroll() {
-      // Products
-      ScrollReveal().reveal(".product-verbete-title", {
-        delay: 0,
-        duration: 2500,
-        distance: "100px",
-        origin: "bottom",
-
-      });
-      ScrollReveal().reveal(".product-verbete-about", {
-        delay: 150,
-        duration: 2500,
-        distance: "100px",
-        origin: "bottom",
-
-      });
-      ScrollReveal().reveal(".product-verbete-desc", {
-        delay: 300,
-        duration: 2500,
-        distance: "100px",
-        origin: "bottom",
-
-      });
-      ScrollReveal().reveal(".product-verbete-dimension", {
-        delay: 450,
-        duration: 2500,
-        distance: "100px",
-        origin: "bottom",
-
-      });
-      ScrollReveal().reveal(".product-verbete-price", {
-        delay: 600,
-        duration: 2500,
-        distance: "100px",
-        origin: "bottom",
-
-      });
-      ScrollReveal().reveal(".product-verbete-btn", {
-        delay: 500,
-        duration: 2500,
-        distance: "100px",
-        origin: "bottom",
-
-      });
     },
   },
 };
@@ -170,20 +128,17 @@ export default {
 }
 
 .swiper-pagination >>> .swiper-pagination-bullet {
-    margin: 0 5px !important;
-    width: 10px !important;
-    height: 10px !important;
+  margin: 0 5px !important;
+  width: 10px !important;
+  height: 10px !important;
 }
 
 .swiper-pagination >>> .swiper-pagination-bullet-active {
-    background-color: #706063;
+  background-color: #706063;
 }
 
 .product-verbete {
   position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
   padding: 0 15px !important;
   background-color: #b69ca1;
   box-shadow: 6px 6px 10px rgb(173, 173, 173);
@@ -191,6 +146,12 @@ export default {
   width: calc(100vw - 50px) !important;
   z-index: 1;
   margin: -30px -30px 0 0 !important;
+}
+
+.product-verbete-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .product-verbete-title {
