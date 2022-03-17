@@ -1,7 +1,17 @@
 <template>
   <div id="navbar">
-    <NavDesktop v-show="width > 950" :menu="menu" :change-bg="changeBg" @scroll="scroll" />
-    <NavMobile v-show="width <= 950" :menu="menu" :change-bg="changeBg" @scroll="scroll" />
+    <NavDesktop
+      v-show="width > 950"
+      :menu="menu"
+      :change-bg="changeBg"
+      @scroll="scroll"
+    />
+    <NavMobile
+      v-show="width <= 950"
+      :menu="menu"
+      :change-bg="changeBg"
+      @scroll="scroll"
+    />
   </div>
 </template>
 
@@ -19,11 +29,11 @@ export default {
     return {
       width: null,
       changeBg: false,
-      menu: ["sobre", "monocroma", "caline", "surpris", "elegance", "bouquet"],
+      menu: ["sobre", "monocroma", "surpris", "elegance", "bouquet", "caline"],
     };
   },
   mounted() {
-    this.revealScroll()
+    this.revealScroll();
 
     // Gets the device width and add a listener to watch changes on the width
     this.width = window.innerWidth;
@@ -49,7 +59,7 @@ export default {
       const element = document.getElementById("sobre");
       const y =
         element?.getBoundingClientRect().top - (this.width <= 950 ? 56 : 71);
-      this.changeBg = y <= 0
+      this.changeBg = y <= 0;
     },
 
     // Scroll to element on page
@@ -75,7 +85,7 @@ export default {
         duration: 1500,
         distance: "100px",
         origin: "top",
-        interval: 150
+        interval: 150,
       });
       ScrollReveal().reveal(".nav-desktop-icon", {
         delay: 900,
@@ -97,7 +107,7 @@ export default {
         distance: "100px",
         origin: "top",
       });
-    }
+    },
   },
 };
 </script>
