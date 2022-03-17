@@ -1,9 +1,6 @@
 <template>
   <div class="main" id="home">
-    <v-img
-      :src="require('~/static/background.png')"
-      class="home-background"
-    ></v-img>
+    <div class="home-opacity"></div>
     <div class="home-verbete">
       <span class="home-verbete-title">flo.res.ça</span>
       <span class="home-verbete-desc">
@@ -60,15 +57,31 @@ export default {
   justify-content: center;
   align-items: center;
   position: relative;
+  background-image: url("@/static/background-desktop.png");
+  background-size: cover;
+  background-position: center 20%;
   height: 100vh;
 }
 
-.home-background {
+@media (max-width: 700px) {
+  .main {
+    background-image: url("@/static/background-mobile.png");
+    background-position: 90% center;
+  }
+  .home-verbete {
+    align-items: center;
+  }
+  .home-verbete-desc {
+    text-align: center;
+  }
+}
+
+.home-opacity {
   position: absolute;
-  top: 0;
-  height: calc(100vh);
-  background-position: center;
-  opacity: 0.15;
+  background-color: #dbc9cc;
+  width: 100vw;
+  height: 100vh;
+  opacity: 0.75;
 }
 
 .home-verbete {
@@ -76,6 +89,7 @@ export default {
   flex-direction: column;
   max-width: 300px;
   text-align: left;
+  z-index: 2;
 }
 
 .home-verbete-title {
