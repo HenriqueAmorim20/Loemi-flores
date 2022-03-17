@@ -76,6 +76,7 @@ export default {
   grid-template-areas: "one two three";
   gap: 2rem;
   padding: 0.5rem 2rem !important;
+  background-color: #ebebeb;
 }
 
 .one {
