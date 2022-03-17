@@ -66,20 +66,20 @@ export default {
       // Navbar desktop
       ScrollReveal().reveal(".nav-desktop-logo", {
         delay: 0,
-        duration: 2500,
+        duration: 1500,
         distance: "100px",
         origin: "top",
       });
       ScrollReveal().reveal(".nav-desktop-transition", {
         delay: 150,
-        duration: 2500,
+        duration: 1500,
         distance: "100px",
         origin: "top",
         interval: 150
       });
       ScrollReveal().reveal(".nav-desktop-icon", {
-        delay: 750,
-        duration: 2500,
+        delay: 900,
+        duration: 1500,
         distance: "100px",
         origin: "top",
       });
@@ -87,13 +87,13 @@ export default {
       // Navbar mobile
       ScrollReveal().reveal(".nav-mobile-logo", {
         delay: 0,
-        duration: 2500,
+        duration: 1500,
         distance: "100px",
         origin: "top",
       });
       ScrollReveal().reveal(".nav-mobile-icon", {
         delay: 150,
-        duration: 2500,
+        duration: 1500,
         distance: "100px",
         origin: "top",
       });
