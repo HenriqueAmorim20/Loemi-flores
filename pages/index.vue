@@ -1,8 +1,10 @@
 <template>
   <div id="index">
-    <Home :width="width"/>
+    <Home :width="width" />
     <About />
-    <Products :width="width"/>
+    <Products :width="width" />
+    <Papelaria />
+    <!-- <Assinatura /> -->
   </div>
 </template>
 
@@ -10,21 +12,25 @@
 import Home from "~/sections/home.vue";
 import About from "~/sections/about.vue";
 import Products from "~/sections/products.vue";
+import Papelaria from "~/sections/papelaria.vue";
+// import Assinatura from "~/sections/assinatura.vue";
 
 export default {
-  name: 'IndexPage',
+  name: "IndexPage",
   components: {
     Home,
     About,
-    Products
+    Products,
+    Papelaria,
+    // Assinatura,
   },
   data() {
     return {
       width: null,
-    }
+    };
   },
   mounted() {
-    this.revealScroll()
+    this.revealScroll();
 
     // Gets the device width and add a listener to watch changes on the width
     this.width = window.innerWidth;
@@ -47,44 +53,47 @@ export default {
       // Home
       ScrollReveal().reveal(".home-verbete-title", {
         delay: 0,
-        duration: 2500,
-        distance: "300px",
+        duration: 1500,
+        distance: "150px",
         origin: "bottom",
       });
       ScrollReveal().reveal(".home-verbete-desc", {
         delay: 150,
-        duration: 2500,
-        distance: "300px",
+        duration: 1500,
+        distance: "150px",
         origin: "bottom",
       });
       ScrollReveal().reveal(".home-icon", {
         delay: 300,
-        duration: 2500,
-        distance: "300px",
+        duration: 1500,
+        distance: "150px",
         origin: "bottom",
       });
 
       // Sobre
-      ScrollReveal().reveal(".about-logo", {
+      ScrollReveal().reveal(".about", {
         delay: 0,
-        duration: 2500,
-        distance: "150px",
-        origin: "left",
+        duration: 1500,
+        distance: "200px",
+        origin: "bottom",
       });
-      ScrollReveal().reveal(".about-line", {
-        delay: 150,
-        duration: 2500,
-        distance: "150px",
-        origin: "left",
-        inteval: 50
+
+      // Papelaria
+      ScrollReveal().reveal(".papelaria-title", {
+        delay: 0,
+        duration: 1500,
+        distance: "100px",
+        origin: "bottom",
       });
-      ScrollReveal().reveal(".about-name", {
-        delay: 450,
-        duration: 2500,
-        distance: "150px",
-        origin: "left",
+      ScrollReveal().reveal(".papelaria-img", {
+        delay: 100,
+        duration: 1500,
+        distance: "100px",
+        origin: "bottom",
+        interval: 100,
       });
-    }
-  }
-}
+    },
+
+  },
+};
 </script>
