@@ -1,13 +1,13 @@
 <template>
   <footer id="footer" class="footer">
     <section class="one">
-      <span @click="scroll()">LOEMI</span>
       <a
         :href="'https://wa.me/5561981771264?text=' + getMessage()"
         target="_blank"
         rel="noopener noreferrer"
       >
         <Icon class="icon" :icon="'wpp'" :width="25" :color="'#706063'" />
+        <p>(61) 98177-1264</p>
       </a>
       <a
         href="https://www.instagram.com/loemiflores/"
@@ -15,10 +15,13 @@
         rel="noopener noreferrer"
       >
         <Icon class="icon" :icon="'insta'" :width="25" :color="'#706063'" />
+        <p>@loemiflores</p>
       </a>
     </section>
     <section class="two">
-      <span> All rights reserved &copy; {{ new Date().getFullYear() }} </span>
+      <span>
+        All rights reserved LOEMI &copy; {{ new Date().getFullYear() }}
+      </span>
     </section>
     <section class="three">
       <a
@@ -72,7 +75,7 @@ export default {
   display: grid;
   grid-template-areas: "one two three";
   gap: 2rem;
-  padding: 0rem 4rem !important;
+  padding: 0.5rem 2rem !important;
 }
 
 .one {
@@ -82,12 +85,18 @@ export default {
 }
 
 .one span {
-  font-size: clamp(2.5rem, 4vw, 3rem);
+  font-size: clamp(2rem, 3vw, 2.5rem);
   margin-right: 1rem !important;
 }
 
 .one a {
+  display: flex;
   margin: 0 0.5rem !important;
+  text-decoration: none;
+}
+
+.one p {
+  margin-left: 0.5rem !important;
 }
 
 .two {
@@ -95,7 +104,7 @@ export default {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.3rem;
+  font-size: 1.1rem;
 }
 
 .three {
@@ -107,7 +116,7 @@ export default {
 
 .three a {
   text-decoration: none;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   color: #706063;
   margin: 0 0.5rem !important;
 }
@@ -134,7 +143,8 @@ export default {
   .three {
     justify-content: flex-start;
   }
-  .three a {
+  .three a,
+  .one a {
     margin: 0 0.5rem 0 0 !important;
   }
 }
