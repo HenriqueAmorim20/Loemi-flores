@@ -81,7 +81,7 @@ export default {
   background-color: #dbc9cc;
   width: 100vw;
   height: 100vh;
-  opacity: 0.6;
+  opacity: 0.7;
 }
 
 .home-verbete {
