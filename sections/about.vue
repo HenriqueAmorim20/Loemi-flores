@@ -46,7 +46,6 @@ export default {
 
 <style scoped>
 .main {
-  min-height: 80vh;
   background-color: #b69ca1;
 }
 .about {

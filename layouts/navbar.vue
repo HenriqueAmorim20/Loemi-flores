@@ -1,13 +1,13 @@
 <template>
   <div id="navbar">
     <NavDesktop
-      v-show="width > 950"
+      v-show="width > 1050"
       :menu="menu"
       :change-bg="changeBg"
       @scroll="scroll"
     />
     <NavMobile
-      v-show="width <= 950"
+      v-show="width <= 1050"
       :menu="menu"
       :change-bg="changeBg"
       @scroll="scroll"
@@ -29,7 +29,7 @@ export default {
     return {
       width: null,
       changeBg: false,
-      menu: ["sobre", "monocroma", "surpris", "elegance", "bouquet", "caline"],
+      menu: ["sobre", "monocroma", "surpris", "elegance", "bouquet", "caline", "papelaria"],
     };
   },
   mounted() {
