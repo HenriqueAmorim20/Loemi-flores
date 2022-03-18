@@ -1,5 +1,5 @@
 <template>
-  <div class="papelaria">
+  <div class="papelaria" id="papelaria">
     <h1 class="papelaria-title">nossa papelaria</h1>
     <v-img
       class="papelaria-img"

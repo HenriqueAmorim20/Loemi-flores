@@ -146,7 +146,7 @@ export default {
 
 .product {
   width: 100%;
-  height: 85vh;
+  min-height: 85vh;
 }
 
 .product-info {
