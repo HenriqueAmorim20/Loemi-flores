@@ -2,14 +2,14 @@
   <div class="main" id="home">
     <div class="home-opacity"></div>
     <div class="home-verbete">
-      <span class="home-verbete-title">flo.res.ça</span>
-      <span class="home-verbete-desc">
+      <span class="home-verbete-title load-hidden">flo.res.ça</span>
+      <span class="home-verbete-desc load-hidden">
         cobrir(-se) de flores; dar ou fazer brotar flores; prosperar; brilhar;
         distinguir.
       </span>
     </div>
     <div
-      class="home-icon"
+      class="home-icon load-hidden"
       @mouseover="color = '#fff'"
       @mouseleave="color = '#706163'"
       @click="scroll()"

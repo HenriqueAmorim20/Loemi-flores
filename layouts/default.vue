@@ -50,6 +50,10 @@ export default {
   color: #706063;
 }
 
+html.sr .load-hidden {
+    visibility: hidden;
+}
+
 body {
   overflow: hidden !important;
 }

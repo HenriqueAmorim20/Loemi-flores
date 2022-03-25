@@ -7,21 +7,21 @@
       flat
       fixed
     >
-      <div class="nav-desktop-logo" @click="scroll('home')">
+      <div class="nav-desktop-logo load-hidden" @click="scroll('home')">
         <span>LOEMI</span>
       </div>
       <v-spacer class="nav-desktop-divider" />
       <div
         v-for="item in menu"
         :key="item"
-        class="nav-desktop-transition"
+        class="nav-desktop-transition load-hidden"
         @click="scroll(item)"
       >
         <div class="nav-desktop-item">
           <span>{{ item }}</span>
         </div>
       </div>
-      <div class="nav-desktop-icon">
+      <div class="nav-desktop-icon load-hidden">
         <v-img
           contain
           width="30"
