@@ -30,7 +30,7 @@ export default {
   color: #fff;
   text-transform: uppercase;
   font-weight: normal;
-  font-size: clamp(1.4rem, 2rem, 2.5rem);
+  font-size: clamp(1.5rem, 3.5vw, 2rem);
   text-align: center;
   margin: 0 auto !important;
   width: 100%;

@@ -129,7 +129,28 @@ export default {
   transform: translateY(-5px);
 }
 
-@media (max-width: 950px) {
+@media (max-width: 880px) {
+  .footer {
+    grid-template-areas:
+      "one two"
+      "none three";
+    padding: 1rem !important;
+  }
+
+  .one {
+    justify-content: flex-start;
+  }
+  .two,
+  .three {
+    justify-content: flex-end;
+  }
+  .three a,
+  .one a {
+    margin: 0 0.5rem 0 0 !important;
+  }
+}
+
+@media (max-width: 600px) {
   .footer {
     grid-template-areas:
       "one"
@@ -141,11 +162,7 @@ export default {
   .one,
   .two,
   .three {
-    justify-content: flex-start;
-  }
-  .three a,
-  .one a {
-    margin: 0 0.5rem 0 0 !important;
+    justify-content: center;
   }
 }
 </style>
