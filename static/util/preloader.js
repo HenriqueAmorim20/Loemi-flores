@@ -15,4 +15,9 @@ preload(
   "/papelaria/5.png",
   "/papelaria/6.png",
   "/papelaria/7.png",
+  "/bouquet/1.png",
+  "/caline/1.png",
+  "/elegance/1.png",
+  "/monocroma/1.png",
+  "/surpris/1.png",
 )

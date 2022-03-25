@@ -68,8 +68,6 @@ export default {
   mounted() {
     // Swipper init and options
     new Swiper(".swiper", {
-      preloadImages: true,
-      updateOnImagesReady: true,
       speed: 1500,
       pagination: {
         el: ".swiper-pagination",
@@ -79,7 +77,6 @@ export default {
         nextEl: ".swiper-button-next",
         prevEl: ".swiper-button-prev",
       },
-      // effect: "fade",
     });
     this.revealScroll();
   },
