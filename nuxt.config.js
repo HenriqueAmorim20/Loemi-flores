@@ -29,6 +29,7 @@ export default {
         src: "https://unpkg.com/scrollreveal",
         body: true,
       },
+      { src: "/util/preloader.js", body: true },
     ],
   },
 
