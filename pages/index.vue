@@ -73,22 +73,22 @@ export default {
       // Sobre
       ScrollReveal().reveal(".about", {
         delay: 0,
-        duration: 1500,
-        distance: "200px",
+        duration: 2000,
+        distance: "50px",
         origin: "bottom",
       });
 
       // Papelaria
       ScrollReveal().reveal(".papelaria-title", {
         delay: 0,
-        duration: 1500,
-        distance: "100px",
+        duration: 2000,
+        distance: "50px",
         origin: "bottom",
       });
       ScrollReveal().reveal(".papelaria-img", {
         delay: 100,
-        duration: 1500,
-        distance: "100px",
+        duration: 2000,
+        distance: "50px",
         origin: "bottom",
         interval: 100,
       });

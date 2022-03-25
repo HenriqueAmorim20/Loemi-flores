@@ -1,11 +1,11 @@
 <template>
   <div class="papelaria" id="papelaria">
     <h1 class="papelaria-title">nossa papelaria</h1>
-    <v-img
+    <img
       class="papelaria-img"
       v-for="index in 7"
       :key="index"
-      :src="require(`@/static/papelaria/${index}.png`)"
+      :src="`/papelaria/${index}.png`"
     />
   </div>
 </template>
@@ -38,6 +38,9 @@ export default {
 }
 .papelaria-img {
   aspect-ratio: 1;
+  width: 100%;
+  object-position: center;
+  object-fit: cover;
 }
 
 @media (max-width: 900px) {

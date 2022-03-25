@@ -10,12 +10,10 @@
             :key="index"
             class="swiper-slide"
           >
-            <v-img
-              :src="require(`~/static/${product.name}/${index}.png`)"
-              position="center"
-              width="100%"
-              height="100%"
-            ></v-img>
+            <img
+              :src="`/${product.name}/${index}.png`"
+              class="img"
+            />
           </div>
         </div>
         <!-- pagination -->
@@ -120,6 +118,13 @@ export default {
   margin-left: -30px !important;
   aspect-ratio: 1 / 1.5 !important;
   box-shadow: 6px 6px 10px rgb(173, 173, 173);
+}
+
+.img {
+  object-fit: cover;
+  object-position: center;
+  width: 100%;
+  height: 100%;
 }
 
 .swiper {

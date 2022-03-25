@@ -15,13 +15,10 @@
               :key="index"
               class="swiper-slide"
             >
-              <v-img
-                :src="require(`~/static/${product.name}/${index}.png`)"
-                position="center"
-                width="100%"
-                height="100%"
-                class="swiper-lazy"
-              ></v-img>
+              <img
+                :src="`/${product.name}/${index}.png`"
+                class="img"
+              />
             </div>
           </div>
           <!-- pagination -->
@@ -144,7 +141,15 @@ export default {
 
 .product {
   width: 100%;
-  min-height: 85vh;
+  max-height: 85vh;
+}
+
+.img {
+  object-position: center;
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  max-height: 85vh;
 }
 
 .product-info {
