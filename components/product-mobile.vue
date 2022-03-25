@@ -68,6 +68,7 @@ export default {
   mounted() {
     // Swipper init and options
     new Swiper(".swiper", {
+      preloadImages: true,
       speed: 1500,
       pagination: {
         el: ".swiper-pagination",

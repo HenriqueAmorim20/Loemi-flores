@@ -8,11 +8,6 @@ function preload() {
 preload(
   "/background-desktop.png",
   "/background-mobile.png",
-  "/bouquet/1.png",
-  "/caline/1.png",
-  "/elegance/1.png",
-  "/monocroma/1.png",
-  "/surpris/1.png",
   "/papelaria/1.png",
   "/papelaria/2.png",
   "/papelaria/3.png",
