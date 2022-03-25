@@ -7,11 +7,11 @@
       flat
       fixed
     >
-      <div class="nav-mobile-logo" @click="scroll('home')">
+      <div class="nav-mobile-logo load-hidden" @click="scroll('home')">
         <span>LOEMI</span>
       </div>
       <v-spacer />
-      <div class="nav-mobile-icon" @click="drawer = !drawer">
+      <div class="nav-mobile-icon load-hidden" @click="drawer = !drawer">
         <Icon :icon="'menu'" />
       </div>
     </v-app-bar>
