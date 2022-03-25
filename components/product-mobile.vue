@@ -68,7 +68,10 @@ export default {
   mounted() {
     // Swipper init and options
     new Swiper(".swiper", {
-      preloadImages: true,
+      lazy: {
+        loadPrevNext: true,
+        loadPrevNextAmount: 4,
+      },
       speed: 1500,
       pagination: {
         el: ".swiper-pagination",
