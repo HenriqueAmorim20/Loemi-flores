@@ -1,6 +1,9 @@
 <template>
-  <div class="main" id="home">
-    <div class="home-opacity"></div>
+  <div class="home" id="home">
+    <!-- Mascara de cor com opacidade -->
+    <div class="home-opacity" />
+
+    <!-- Verbete -->
     <div class="home-verbete">
       <span class="home-verbete-title load-hidden">flo.res.ça</span>
       <span class="home-verbete-desc load-hidden">
@@ -8,51 +11,31 @@
         distinguir.
       </span>
     </div>
-    <div
-      class="home-icon load-hidden"
-      @mouseover="color = '#fff'"
-      @mouseleave="color = '#706163'"
-      @click="scroll()"
-    >
-      <Icon :icon="'arrow-down'" :color="color" :width="40" />
+
+    <!-- Seta para baixo com animacao -->
+    <div class="home-arrow load-hidden">
+      <v-icon class="home-arrow-icon" color="#706063" @click="scrollToAbout()">
+        mdi-chevron-down
+      </v-icon>
     </div>
   </div>
 </template>
-
 <script>
-import Icon from "~/components/icon.vue";
-
 export default {
   name: "HomeSection",
-  components: {
-    Icon,
-  },
-  props: {
-    width: {
-      type: Number,
-      default: null,
-    },
-  },
-  data() {
-    return {
-      color: "#706063",
-    };
-  },
   methods: {
-    scroll() {
+    // Method that scrolls to about section
+    scrollToAbout() {
       const element = document.getElementById("sobre");
-      const y =
-        element?.getBoundingClientRect().top +
-        window.pageYOffset -
-        (this.width > 950 ? 70 : 55);
+      const y = element?.getBoundingClientRect().top + window.pageYOffset - 60;
       window.scrollTo({ top: y, behavior: "smooth" });
     },
   },
 };
 </script>
-
 <style scoped>
-.main {
+/* Inicio home */
+.home {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -62,20 +45,9 @@ export default {
   background-position: center 20%;
   height: 100vh;
 }
+/* Fim home */
 
-@media (max-width: 700px) {
-  .main {
-    background-image: url("@/static/background-mobile.png");
-    background-position: 90% center;
-  }
-  .home-verbete {
-    align-items: center;
-  }
-  .home-verbete-desc {
-    text-align: center;
-  }
-}
-
+/* Inicio Mascara de cor para home */
 .home-opacity {
   position: absolute;
   background-color: #dbc9cc;
@@ -83,11 +55,12 @@ export default {
   height: 100vh;
   opacity: 0.7;
 }
+/* Fim Mascara de cor para home */
 
+/* Inicio verbete */
 .home-verbete {
-  display: flex;
-  flex-direction: column;
-  max-width: 300px;
+  padding: 1rem;
+  max-width: 350px;
   text-align: left;
   z-index: 2;
 }
@@ -99,15 +72,24 @@ export default {
 .home-verbete-desc {
   font-size: 1.5rem;
 }
+/* Fim verbete */
 
-.home-icon {
+/* Inicio Icone seta */
+.home-arrow {
   position: absolute;
   bottom: 60px;
-  left: calc(50% - 20px);
-  font-size: 3rem;
+  left: calc(50% - clamp(1.5rem, 2.5vw, 2rem));
   cursor: pointer;
   animation: bounce 1s infinite alternate;
   -webkit-animation: bounce 1s infinite alternate;
+}
+
+.home-arrow-icon {
+  font-size: clamp(3rem, 5vw, 4rem);
+}
+
+.home-arrow-icon:hover {
+  color: #fff !important;
 }
 
 @keyframes bounce {
@@ -118,6 +100,7 @@ export default {
     transform: translateY(-15px);
   }
 }
+
 @-webkit-keyframes bounce {
   from {
     transform: translateY(0px);
@@ -126,4 +109,14 @@ export default {
     transform: translateY(-15px);
   }
 }
+/* Fim Icone seta */
+
+/* Inicio media query para mobile */
+@media (max-width: 700px) {
+  .home {
+    background-image: url("@/static/background-mobile.png");
+    background-position: 90% center;
+  }
+}
+/* Fim media query para mobile */
 </style>
