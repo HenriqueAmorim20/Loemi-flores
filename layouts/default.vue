@@ -1,5 +1,5 @@
 <template>
-  <v-app class="background">
+  <v-app class="app">
     <Navbar />
     <v-main>
       <Nuxt />
@@ -44,21 +44,19 @@ export default {
 }
 
 * {
-  margin: 0 !important;
-  padding: 0 !important;
   font-family: "cormorant";
   color: #706063;
 }
 
 html.sr .load-hidden {
-    visibility: hidden;
+  visibility: hidden;
 }
 
 body {
   overflow: hidden !important;
 }
 
-.background {
+.app {
   background-color: #dbc9cc !important;
 }
 </style>
