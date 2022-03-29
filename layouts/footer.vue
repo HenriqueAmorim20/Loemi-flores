@@ -38,7 +38,7 @@
         href="http://melohenrique.com"
         target="_blank"
         rel="noopener noreferrer"
-        >Created By: Henrique Melo
+        >Coded By: Henrique Melo
       </a>
       <a
         class="footer-creator-link"

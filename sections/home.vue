@@ -59,7 +59,8 @@ export default {
 
 /* Inicio verbete */
 .home-verbete {
-  max-width: 300px;
+  padding: 1rem;
+  max-width: 350px;
   text-align: left;
   z-index: 2;
 }

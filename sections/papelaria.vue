@@ -22,6 +22,8 @@ export default {
   grid-template-columns: repeat(4, 1fr);
   gap: 0.75rem;
   padding: 0.75rem;
+  max-width: 1920px;
+  margin: 0 auto;
 }
 
 .papelaria-title {
