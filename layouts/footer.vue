@@ -1,168 +1,151 @@
 <template>
   <footer id="footer" class="footer">
-    <section class="one">
+    <!-- Informacoes e links da Loemi -->
+    <section class="footer-info">
       <a
-        :href="'https://wa.me/5561981771264?text=' + getMessage()"
+        class="footer-info-link"
+        :href="'https://wa.me/5561981771264?text=' + message"
         target="_blank"
         rel="noopener noreferrer"
       >
-        <Icon class="icon" :icon="'wpp'" :width="25" :color="'#706063'" />
-        <p>(61) 98177-1264</p>
+        <v-icon class="footer-info-link-icon" color="#706063">
+          mdi-whatsapp
+        </v-icon>
+        <span class="footer-info-link-text">(61) 98177-1264</span>
       </a>
       <a
+        class="footer-info-link"
         href="https://www.instagram.com/loemiflores/"
         target="_blank"
         rel="noopener noreferrer"
       >
-        <Icon class="icon" :icon="'insta'" :width="25" :color="'#706063'" />
-        <p>@loemiflores</p>
+        <v-icon class="footer-info-link-icon" color="#706063">
+          mdi-instagram
+        </v-icon>
+        <span class="footer-info-link-text">@loemiflores</span>
       </a>
     </section>
-    <section class="two">
-      <span>
-        All rights reserved LOEMI &copy; {{ new Date().getFullYear() }}
-      </span>
+
+    <!-- Informacoes de direitos autorais -->
+    <section class="footer-copyright">
+      All rights reserved LOEMI &copy; {{ new Date().getFullYear() }}
     </section>
-    <section class="three">
+
+    <!-- Informacoes sobre o desenvolvedor do site -->
+    <section class="footer-creator">
       <a
+        class="footer-creator-link"
         href="http://melohenrique.com"
         target="_blank"
         rel="noopener noreferrer"
         >Created By: Henrique Melo
       </a>
       <a
+        class="footer-creator-link"
         href="https://www.linkedin.com/in/henriqueamorim20/"
         target="_blank"
         rel="noopener noreferrer"
       >
-        <Icon class="icon" :icon="'linkedin'" :width="20" :color="'#706063'" />
+        <v-icon class="footer-creator-link-icon" color="#706063">
+          mdi-linkedin
+        </v-icon>
       </a>
       <a
+        class="footer-creator-link"
         href="https://github.com/HenriqueAmorim20"
         target="_blank"
         rel="noopener noreferrer"
       >
-        <Icon class="icon" :icon="'github'" :width="20" :color="'#706063'" />
+        <v-icon class="footer-creator-link-icon" color="#706063">
+          mdi-github
+        </v-icon>
       </a>
     </section>
   </footer>
 </template>
-
 <script>
-import Icon from "~/components/icon.vue";
-
 export default {
   name: "FooterLayout",
-  components: {
-    Icon,
-  },
-  methods: {
-    //Scrolls to the top of the page
-    scroll() {
-      window.scrollTo({ top: 0, behavior: "smooth" });
-    },
-
-    // Returns the message to sent in whatsapp chat
-    getMessage() {
-      return "Olá, tudo bem? Gostaria de tirar umas dúvidas com você :)";
-    },
+  data() {
+    return {
+      message: "Olá, tudo bem? Gostaria de tirar umas dúvidas com você :)",
+    };
   },
 };
 </script>
-
 <style scoped>
+/* Inicio footer */
 .footer {
   display: grid;
-  grid-template-areas: "one two three";
-  gap: 2rem;
-  padding: 0.5rem 1rem !important;
+  grid-template-areas: "info copy creator";
+  gap: 1.5rem;
+  padding: 1rem 2rem 2rem;
 }
 
-.one {
-  grid-area: one;
+.footer-info,
+.footer-copyright,
+.footer-creator,
+a {
   display: flex;
   align-items: center;
-}
-
-.one span {
-  font-size: clamp(2rem, 3vw, 2.5rem);
-  margin-right: 1rem !important;
-}
-
-.one a {
-  display: flex;
-  margin: 0 1rem 0 0 !important;
   text-decoration: none;
 }
 
-.one p {
-  margin-left: 0.5rem !important;
+.footer-info {
+  grid-area: info;
 }
 
-.two {
-  grid-area: two;
-  display: flex;
-  align-items: center;
+.footer-copyright {
+  grid-area: copy;
   justify-content: center;
-  font-size: 1.1rem;
 }
 
-.three {
-  grid-area: three;
-  display: flex;
-  align-items: center;
+.footer-creator {
+  grid-area: creator;
   justify-content: flex-end;
 }
 
-.three a {
-  text-decoration: none;
-  font-size: 1.1rem;
+.footer-creator-link {
+  margin: 0 0 0 1rem;
   color: #706063;
-  margin: 0 0 0 1rem !important;
 }
 
-.icon {
-  transition: transform 0.7s ease;
+.footer-info-link {
+  margin: 0 1rem 0 0;
 }
 
-.icon:hover {
-  transform: translateY(-5px);
+.footer-info-link-icon {
+  margin: 0 0.5rem 0 0;
 }
+/* Fim footer */
 
-@media (max-width: 880px) {
+/* Inicio media queries */
+@media (max-width: 850px) {
   .footer {
     grid-template-areas:
-      "one two"
-      "none three";
-    padding: 1rem !important;
+      "info copy"
+      "none creator";
   }
 
-  .one {
-    justify-content: flex-start;
-  }
-  .two,
-  .three {
+  .footer-copyright {
     justify-content: flex-end;
-  }
-  .three a,
-  .one a {
-    margin: 0 0.5rem 0 0 !important;
   }
 }
 
 @media (max-width: 600px) {
   .footer {
     grid-template-areas:
-      "one"
-      "two"
-      "three";
-    padding: 1rem !important;
+      "info"
+      "copy"
+      "creator";
+    padding: 1rem 1rem 2rem;
   }
 
-  .one,
-  .two,
-  .three {
+  .footer-copyright,
+  .footer-info,
+  .footer-creator {
     justify-content: center;
   }
 }
+/* Fim media queries */
 </style>
