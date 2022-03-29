@@ -187,8 +187,8 @@ export default {
 }
 
 .navbar-mobile-icon {
-  font-size: 2rem;
-  color: #706063;
+  font-size: 2rem !important;
+  color: #706063 !important;
 }
 /* Fim navbar */
 
@@ -204,7 +204,7 @@ export default {
 .drawer-close-icon {
   width: max-content;
   align-self: flex-end;
-  font-size: 2.8rem;
+  font-size: 2.8rem !important;
 }
 
 .drawer-items {
