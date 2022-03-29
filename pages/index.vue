@@ -2,7 +2,7 @@
   <div id="index">
     <Home />
     <About />
-    <Products :width="width" />
+    <Products />
     <Papelaria />
   </div>
 </template>
@@ -68,7 +68,15 @@ export default {
       });
 
       // Sobre
-      ScrollReveal().reveal(".about", {
+      ScrollReveal().reveal(".about-text", {
+        delay: 0,
+        duration: 2000,
+        distance: "50px",
+        origin: "bottom",
+      });
+
+      // Produtos
+      ScrollReveal().reveal(".information", {
         delay: 0,
         duration: 2000,
         distance: "50px",
