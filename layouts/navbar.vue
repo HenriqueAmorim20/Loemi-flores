@@ -51,7 +51,7 @@
 </template>
 <script>
 export default {
-  name: "RefactorLayout",
+  name: "NavbarLayout",
   data() {
     return {
       menu: [

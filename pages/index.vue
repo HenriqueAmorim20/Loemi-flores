@@ -1,6 +1,6 @@
 <template>
   <div id="index">
-    <Home :width="width" />
+    <Home />
     <About />
     <Products :width="width" />
     <Papelaria />
@@ -53,20 +53,20 @@ export default {
       // Home
       ScrollReveal().reveal(".home-verbete-title", {
         delay: 0,
-        duration: 1500,
-        distance: "150px",
+        duration: 2000,
+        distance: "100px",
         origin: "bottom",
       });
       ScrollReveal().reveal(".home-verbete-desc", {
-        delay: 150,
-        duration: 1500,
-        distance: "150px",
+        delay: 100,
+        duration: 2000,
+        distance: "100px",
         origin: "bottom",
       });
-      ScrollReveal().reveal(".home-icon", {
+      ScrollReveal().reveal(".home-arrow", {
         delay: 300,
-        duration: 1500,
-        distance: "150px",
+        duration: 2000,
+        distance: "100px",
         origin: "bottom",
       });
 
