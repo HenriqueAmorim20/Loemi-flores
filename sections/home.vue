@@ -77,14 +77,14 @@ export default {
 .home-arrow {
   position: absolute;
   bottom: 60px;
-  left: calc(50% - 20px);
+  left: calc(50% - clamp(1.5rem, 2.5vw, 2rem));
   cursor: pointer;
   animation: bounce 1s infinite alternate;
   -webkit-animation: bounce 1s infinite alternate;
 }
 
 .home-arrow-icon {
-  font-size: 4rem;
+  font-size: clamp(3rem, 5vw, 4rem);
 }
 
 .home-arrow-icon:hover {
@@ -115,10 +115,6 @@ export default {
   .home {
     background-image: url("@/static/background-mobile.png");
     background-position: 90% center;
-  }
-  .home-verbete {
-    align-items: center;
-    text-align: center;
   }
 }
 /* Fim media query para mobile */
