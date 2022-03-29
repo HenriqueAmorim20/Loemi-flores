@@ -3,7 +3,9 @@
     <!-- Navbar -->
     <v-app-bar class="navbar" height="60px" flat fixed :color="navbarColor">
       <!-- Logo do site -->
-      <span class="navbar-logo load-hidden" @click="scrollTo('home')">loemi</span>
+      <span class="navbar-logo load-hidden" @click="scrollTo('home')">
+        loemi
+      </span>
       <v-spacer></v-spacer>
       <!-- Menu de navegacao para desktop -->
       <div class="navbar-menu">
@@ -26,9 +28,19 @@
     </v-app-bar>
 
     <!-- Menu drawer para mobile -->
-    <v-navigation-drawer v-model="drawer" fixed right width="425px" color="#dbc9cc">
+    <v-navigation-drawer
+      v-model="drawer"
+      fixed
+      right
+      width="425px"
+      color="#dbc9cc"
+    >
       <div class="drawer">
-        <v-icon class="drawer-close-icon" @click.stop="drawer = !drawer" color="#706063">
+        <v-icon
+          class="drawer-close-icon"
+          @click.stop="drawer = !drawer"
+          color="#706063"
+        >
           mdi-close
         </v-icon>
         <div class="drawer-items">
@@ -64,15 +76,11 @@ export default {
         "papelaria",
       ],
       drawer: false,
-      navbarColor: null,
-      aboutElement: null,
+      navbarColor: "transparent",
     };
   },
   mounted() {
     this.revealScroll();
-
-    // Gets the element on about section
-    this.aboutElement = document.getElementById("sobre");
     this.onScroll();
 
     // Add a listener to watch changes on the scroll
@@ -89,7 +97,9 @@ export default {
   methods: {
     // Method called on scroll to set the navbar background color
     onScroll() {
-      const y = this.aboutElement?.getBoundingClientRect().top - 60;
+      // Gets the element on about section
+      const aboutElement = document.getElementById("sobre");
+      const y = aboutElement?.getBoundingClientRect().top - 60;
       this.navbarColor = y > 0 ? "transparent" : "#dbc9cc";
     },
 
@@ -181,7 +191,6 @@ export default {
   color: #706063;
 }
 /* Fim navbar */
-
 
 /* Inicio drawer mobile */
 .drawer {
