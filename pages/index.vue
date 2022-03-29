@@ -21,31 +21,10 @@ export default {
     Products,
     Papelaria,
   },
-  data() {
-    return {
-      width: null,
-    };
-  },
   mounted() {
     this.revealScroll();
-
-    // Gets the device width and add a listener to watch changes on the width
-    this.width = window.innerWidth;
-    this.$nextTick(() => {
-      window.addEventListener("resize", this.onResize);
-    });
-  },
-
-  //Remove listener before the component is destroyed
-  beforeDestroy() {
-    window.removeEventListener("resize", this.onResize);
   },
   methods: {
-    // Method called everytime window is resized
-    onResize() {
-      this.width = window.innerWidth;
-    },
-
     revealScroll() {
       // Home
       ScrollReveal().reveal(".home-verbete-title", {
@@ -98,7 +77,6 @@ export default {
         interval: 100,
       });
     },
-
   },
 };
 </script>
