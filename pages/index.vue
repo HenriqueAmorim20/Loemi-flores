@@ -4,7 +4,6 @@
     <About />
     <Products :width="width" />
     <Papelaria />
-    <!-- <Assinatura /> -->
   </div>
 </template>
 
@@ -13,7 +12,6 @@ import Home from "~/sections/home.vue";
 import About from "~/sections/about.vue";
 import Products from "~/sections/products.vue";
 import Papelaria from "~/sections/papelaria.vue";
-// import Assinatura from "~/sections/assinatura.vue";
 
 export default {
   name: "IndexPage",
@@ -22,7 +20,6 @@ export default {
     About,
     Products,
     Papelaria,
-    // Assinatura,
   },
   data() {
     return {
