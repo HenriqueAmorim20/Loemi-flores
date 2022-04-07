@@ -14,7 +14,7 @@
       </span>
       <span class="about-text-line">
         Loemi não é só meu ateliê de design floral, mas sim a minha alma, a
-        minha arte, o meu cuidado <b style="color: white">e todo o meu bem querer</b> em cada
+        minha arte, o meu cuidado e todo o meu bem querer em cada
         detalhe.
       </span>
       <span class="about-text-line"> Uma marca para florescer. </span>
