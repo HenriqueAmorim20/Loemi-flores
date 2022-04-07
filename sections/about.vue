@@ -5,17 +5,22 @@
       <span class="about-text-logo"> LOEMI </span>
       <span class="about-text-line"> Minha mãe, Minha inspiração! </span>
       <span class="about-text-line">
-        Ter uma mãe que exala charme, estilo e talento foi a melhor escola da minha vida.
+        Ter uma mãe que exala charme, estilo e talento foi a melhor escola da
+        minha vida.
       </span>
       <span class="about-text-line">
-        E para criar uma marca tão sonhada, idealizada para exprimir beleza e arte, nada poderia ser diferente dela.
+        E para criar uma marca tão sonhada, idealizada para exprimir beleza e
+        arte, nada poderia ser diferente dela.
       </span>
       <span class="about-text-line">
-        Loemi não é só meu ateliê de design floral, mas sim a minha alma, a minha arte e o meu cuidado em todos os detalhes.
+        Loemi não é só meu ateliê de design floral, mas sim a minha alma, a
+        minha arte, o meu cuidado <b style="color: white">e todo o meu bem querer</b> em cada
+        detalhe.
       </span>
       <span class="about-text-line"> Uma marca para florescer. </span>
       <span class="about-text-line">
-        Nascemos juntas como mãe e filha, há 43 anos, e agora renasço com ela e quero cobrir de flores, de brilho e de beleza quem a receba.
+        Nascemos juntas como mãe e filha, há 43 anos, e agora renasço com ela e
+        quero cobrir de flores, de brilho e de beleza quem a receba.
       </span>
       <span class="about-text-name"> Amanda Azevedo </span>
     </div>
