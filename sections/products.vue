@@ -56,7 +56,15 @@
             {{ dimension }}
           </span>
         </div>
-        <span class="information-price"> R$ {{ product.price }},00 </span>
+        <div
+          v-for="(price, index) of product.prices"
+          :key="index"
+          class="information-price"
+          >
+            <span class="information-price-value">R$ {{ price.value }},00</span>
+            <span class="information-price-desc">{{ price.desc }}</span>
+          </div
+        >
         <a
           class="information-btn"
           :href="'https://wa.me/5561981771264?text=' + getMessage(product.name)"
@@ -81,7 +89,12 @@ export default {
           about: "monocromática; colorida; astral; moderna.",
           desc: ["caixa redonda;"],
           dimensions: ["12x12x12;"],
-          price: 147,
+          prices: [
+            {
+              value: 147,
+              desc: null,
+            },
+          ],
           qtdImgs: 6,
         },
         {
@@ -91,12 +104,19 @@ export default {
           desc: [
             "caixa surpresa;",
             "contém uma caixa quadrada em seu interior para ser retirada;",
+            "finalizada com uma linda fita artesanal;",
+            "as flores e cores podem variar dependendo das flores disponíveis no dia;",
           ],
           dimensions: [
             "25x25x35 (caixa surpresa);",
             "14x14x11 (caixa quadrada);",
           ],
-          price: 350,
+          prices: [
+            {
+              value: 395,
+              desc: null,
+            },
+          ],
           qtdImgs: 5,
         },
         {
@@ -105,20 +125,41 @@ export default {
           about: "elegante; nobre; única; pura arte.",
           desc: [
             "caixa redonda;",
-            "consultar cores disponíveis;",
-            "as flores variam de acordo com a disponibilidade;",
+            "as flores e cores podem variar dependendo das flores disponíveis no dia;",
           ],
           dimensions: ["15x15x12;"],
-          price: 240,
+          prices: [
+            {
+              value: 250,
+              desc: null,
+            },
+          ],
           qtdImgs: 5,
         },
         {
           name: "bouquet",
           title: "bou.quet",
           about: "clássico; espontâneo; memorável; não precisa de ocasião.",
-          desc: ["aproximadamente 20 hastes;"],
+          desc: [
+            "embalados num mix de papéis de seda e tecido;",
+            "lindamente finalizado com a leveza de uma fita artesanal;",
+            "as flores e cores podem variar dependendo das flores disponíveis no dia;",
+          ],
           dimensions: [],
-          price: 250,
+          prices: [
+            {
+              value: 185,
+              desc: "(aprox. 15 hastes)",
+            },
+            {
+              value: 245,
+              desc: "(aprox. 20 hastes)",
+            },
+            {
+              value: 310,
+              desc: "(aprox. 25 hastes)",
+            },
+          ],
           qtdImgs: 4,
         },
         {
@@ -127,13 +168,16 @@ export default {
           about: "carinhosa; alcoólica; romântica; sutil.",
           desc: [
             "caixa quadrada;",
-            "creme;",
-            "mini buquê;",
-            "mini espumante;",
-            "as flores variam de acordo com a disponibilidade;",
+            "Acompanha um mini buquê e uma mini espumante;",
+            "As flores e cores podem variar dependendo das flores disponíveis no dia;",
           ],
           dimensions: ["15x15x12;"],
-          price: 280,
+          prices: [
+            {
+              value: 280,
+              desc: null,
+            },
+          ],
           qtdImgs: 4,
         },
       ],
@@ -244,8 +288,12 @@ export default {
   margin-right: 0.5rem;
 }
 
-.information-price {
+.information-price-value {
   font-size: clamp(1.5rem, 3vw, 2rem);
+}
+
+.information-price-desc {
+  font-size: clamp(0.9rem, 2vw, 1.2rem);
 }
 
 .information-btn {
@@ -289,7 +337,7 @@ export default {
 
   .information {
     width: 95%;
-    padding: 0 1rem 1rem;
+    padding: 0 0.5rem 1rem 1rem;
     padding-bottom: 1rem;
     margin: -1.5rem 0 0 1.4rem;
     z-index: 2;
