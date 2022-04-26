@@ -60,11 +60,10 @@
           v-for="(price, index) of product.prices"
           :key="index"
           class="information-price"
-          >
-            <span class="information-price-value">R$ {{ price.value }},00</span>
-            <span class="information-price-desc">{{ price.desc }}</span>
-          </div
         >
+          <span class="information-price-value">R$ {{ price.value }},00</span>
+          <span class="information-price-desc">{{ price.desc }}</span>
+        </div>
         <a
           class="information-btn"
           :href="'https://wa.me/5561981771264?text=' + getMessage(product.name)"
@@ -148,15 +147,15 @@ export default {
           dimensions: [],
           prices: [
             {
-              value: 185,
+              value: 200,
               desc: "(aprox. 15 hastes)",
             },
             {
-              value: 245,
+              value: 285,
               desc: "(aprox. 20 hastes)",
             },
             {
-              value: 310,
+              value: 340,
               desc: "(aprox. 25 hastes)",
             },
           ],
