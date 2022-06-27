@@ -147,14 +147,6 @@ export default {
           dimensions: [],
           prices: [
             {
-              value: 200,
-              desc: "(aprox. 15 hastes)",
-            },
-            {
-              value: 285,
-              desc: "(aprox. 20 hastes)",
-            },
-            {
               value: 340,
               desc: "(aprox. 25 hastes)",
             },
