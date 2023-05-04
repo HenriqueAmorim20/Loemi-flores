@@ -90,7 +90,7 @@ export default {
           dimensions: ["12x12x12;"],
           prices: [
             {
-              value: 167,
+              value: 197,
               desc: null,
             },
           ],
@@ -112,7 +112,7 @@ export default {
           ],
           prices: [
             {
-              value: 395,
+              value: 420,
               desc: null,
             },
           ],
@@ -129,7 +129,7 @@ export default {
           dimensions: ["15x15x12;"],
           prices: [
             {
-              value: 260,
+              value: 295,
               desc: null,
             },
           ],
