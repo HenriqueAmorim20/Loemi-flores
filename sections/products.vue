@@ -112,7 +112,7 @@ export default {
           ],
           prices: [
             {
-              value: 385,
+              value: 540,
               desc: null,
             },
           ],
@@ -129,7 +129,7 @@ export default {
           dimensions: ["15x15x12;"],
           prices: [
             {
-              value: 320,
+              value: 380,
               desc: null,
             },
           ],
@@ -147,7 +147,7 @@ export default {
           dimensions: [],
           prices: [
             {
-              value: 450,
+              value: 490,
               desc: "(aprox. 25 hastes)",
             },
           ],
@@ -165,7 +165,7 @@ export default {
           dimensions: ["15x15x12;"],
           prices: [
             {
-              value: 347,
+              value: 430,
               desc: null,
             },
           ],
